@@ -313,8 +313,217 @@ th input{background:transparent;border:none;color:var(--text);font-weight:600;fo
 .export-section{margin-bottom:14px;}
 .export-info{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
 
+/* ===== COMPAGNON ===== */
+.companion-wrap{text-align:center;padding:10px 0 20px;}
+.companion-canvas-wrap{position:relative;display:inline-block;margin-bottom:14px;}
+#companion-canvas{border-radius:50%;cursor:pointer;transition:transform 0.2s;}
+#companion-canvas:hover{transform:scale(1.05);}
+.companion-level{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-radius:50px;padding:4px 14px;font-size:12px;font-weight:700;margin-bottom:8px;}
+.companion-name{font-size:20px;font-weight:700;margin-bottom:4px;}
+.companion-mood{font-size:13px;color:var(--muted);margin-bottom:14px;}
+.companion-xp-bar{height:8px;background:var(--border);border-radius:50px;overflow:hidden;margin-bottom:6px;}
+.companion-xp-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:50px;transition:width 0.6s;}
+.companion-xp-label{font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;}
+.companion-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;}
+.companion-stat{background:var(--surface2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border);}
+.companion-stat .csn{font-size:20px;font-weight:700;color:var(--accent);}
+.companion-stat .csl{font-size:10px;color:var(--muted);}
+.companion-feed-log{max-height:120px;overflow-y:auto;}
+.companion-log-item{font-size:12px;color:var(--muted);padding:4px 0;border-bottom:1px solid var(--border);}
+
+/* ===== WIKIPEDIA ===== */
+.wiki-article{background:var(--surface2);border-radius:12px;padding:16px;border:1px solid var(--border);}
+.wiki-title{font-size:18px;font-weight:700;margin-bottom:8px;line-height:1.3;}
+.wiki-extract{font-size:13px;line-height:1.7;color:var(--text);}
+.wiki-img{width:100%;border-radius:10px;margin-bottom:12px;max-height:200px;object-fit:cover;}
+.wiki-link{display:inline-block;margin-top:12px;color:var(--accent);font-size:13px;text-decoration:none;}
+.wiki-date-chip{display:inline-block;background:rgba(124,111,247,.15);color:var(--accent);border-radius:50px;padding:3px 12px;font-size:11px;margin-bottom:12px;}
+
+/* ===== CARTE DU MONDE ===== */
+.world-map-wrap{position:relative;width:100%;overflow:hidden;border-radius:12px;border:1px solid var(--border);background:#0a1628;touch-action:none;}
+.world-map-wrap svg{display:block;width:100%;}
+.country-path{fill:#1e2a40;stroke:#0a1628;stroke-width:0.5;cursor:pointer;transition:fill 0.15s;}
+.country-path.visited{fill:#43e0b2;}
+.country-path.wishlist{fill:#f7c948;}
+.country-path.lived{fill:#7c6ff7;}
+.country-path:hover{opacity:0.8;}
+.map-legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:12px;}
+.map-legend-item{display:flex;align-items:center;gap:5px;}
+.map-legend-dot{width:12px;height:12px;border-radius:3px;}
+.map-mode-btns{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;}
+.map-mode-btn{padding:6px 12px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:12px;cursor:pointer;transition:all 0.15s;}
+.map-mode-btn.active{color:#fff;border-color:transparent;}
+.map-tooltip{position:absolute;background:#1e1e38;color:#fff;padding:5px 10px;border-radius:8px;font-size:12px;pointer-events:none;z-index:10;border:1px solid var(--border);display:none;}
+.map-country-info{background:var(--surface2);border-radius:10px;padding:12px;margin-top:10px;font-size:13px;border:1px solid var(--border);}
+
+/* ===== MINI-JEUX ===== */
+.game-select{display:flex;gap:10px;margin-bottom:14px;}
+.game-select-btn{flex:1;padding:14px;border-radius:12px;border:1px solid var(--border);background:var(--surface2);color:var(--text);font-size:22px;cursor:pointer;transition:all 0.2s;text-align:center;}
+.game-select-btn:hover,.game-select-btn.active{border-color:var(--accent);background:rgba(124,111,247,.1);}
+.game-select-btn div{font-size:12px;margin-top:4px;color:var(--muted);}
+/* 2048 */
+#grid-2048{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:10px;background:var(--surface2);border-radius:12px;margin-bottom:12px;}
+.cell-2048{aspect-ratio:1;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;transition:all 0.1s;background:var(--border);}
+/* Snake */
+#snake-canvas{border-radius:10px;display:block;margin:0 auto;}
+.game-score{text-align:center;font-size:24px;font-weight:700;color:var(--accent);margin-bottom:10px;}
+.game-over-msg{text-align:center;padding:20px;display:none;}
+.game-over-msg .go-title{font-size:24px;font-weight:700;margin-bottom:8px;}
+.game-controls-hint{text-align:center;font-size:12px;color:var(--muted);margin-bottom:10px;}
+.dpad{display:grid;grid-template-columns:repeat(3,50px);grid-template-rows:repeat(3,50px);gap:4px;margin:12px auto;width:fit-content;}
+.dpad-btn{width:50px;height:50px;border-radius:10px;border:1px solid var(--border);background:var(--surface2);color:var(--text);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.dpad-btn:active{background:var(--accent);color:#fff;}
+
+/* ===== GALERIE ===== */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px;}
+.gallery-item{border-radius:12px;overflow:hidden;border:1px solid var(--border);cursor:pointer;position:relative;background:var(--surface2);}
+.gallery-item img{width:100%;aspect-ratio:1;object-fit:cover;display:block;}
+.gallery-item .gi-note{padding:8px;font-size:12px;color:var(--muted);line-height:1.4;}
+.gallery-item .gi-del{position:absolute;top:6px;right:6px;background:rgba(0,0,0,.6);border:none;color:#fff;border-radius:50%;width:24px;height:24px;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.gallery-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:500;display:none;align-items:center;justify-content:center;flex-direction:column;padding:20px;}
+.gallery-lightbox.active{display:flex;}
+.gallery-lightbox img{max-width:100%;max-height:70vh;border-radius:12px;object-fit:contain;}
+.gallery-lightbox .lb-note{color:#fff;margin-top:12px;font-size:14px;text-align:center;max-width:400px;}
+.gallery-lightbox .lb-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.15);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:20px;cursor:pointer;}
+
+/* ===== CITATIONS ===== */
+.quote-card{background:linear-gradient(135deg,rgba(124,111,247,.15),rgba(255,107,157,.1));border-radius:16px;padding:28px 22px;text-align:center;border:1px solid rgba(124,111,247,.3);margin-bottom:14px;min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.quote-text{font-size:17px;font-style:italic;line-height:1.6;margin-bottom:14px;}
+.quote-author{font-size:13px;color:var(--accent);font-weight:600;}
+.quote-category{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.quote-cat-btn{padding:5px 12px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:12px;cursor:pointer;transition:all 0.15s;}
+.quote-cat-btn.active{border-color:var(--accent);color:var(--accent);}
+.quote-fav{background:none;border:none;font-size:22px;cursor:pointer;margin-top:8px;}
+.quote-favs{margin-top:10px;}
+.quote-fav-item{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;background:var(--surface2);border-radius:10px;margin-bottom:7px;border:1px solid var(--border);font-size:13px;}
+
+/* ===== QR CODE ===== */
+.qr-display{display:flex;justify-content:center;margin:16px 0;padding:20px;background:#fff;border-radius:14px;}
+#qr-canvas{display:block;}
+
+/* ===== CONVERTISSEUR ===== */
+.conv-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
+.conv-tab{padding:6px 12px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:12px;cursor:pointer;transition:all 0.15s;}
+.conv-tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+.conv-row{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.conv-row input{flex:1;}
+.conv-row .conv-unit{font-size:13px;color:var(--muted);min-width:60px;text-align:right;}
+.conv-arrow{text-align:center;font-size:22px;color:var(--muted);margin:4px 0;}
+.conv-result-box{background:var(--surface2);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--border);margin-top:10px;}
+.conv-result-val{font-size:32px;font-weight:700;color:var(--accent);}
+.conv-result-unit{font-size:14px;color:var(--muted);margin-top:4px;}
+
+/* ===== POMODORO ===== */
+.pomo-ring-wrap{display:flex;justify-content:center;margin:16px 0;}
+.pomo-ring{position:relative;width:200px;height:200px;}
+.pomo-ring canvas{position:absolute;top:0;left:0;}
+.pomo-ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.pomo-time{font-size:48px;font-weight:800;letter-spacing:2px;}
+.pomo-label{font-size:12px;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:1px;}
+.pomo-mode-btns{display:flex;gap:8px;margin-bottom:14px;}
+.pomo-mode-btn{flex:1;padding:8px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:13px;cursor:pointer;transition:all 0.2s;}
+.pomo-mode-btn.active{color:#fff;border-color:transparent;}
+.pomo-session-dots{display:flex;gap:6px;justify-content:center;margin:10px 0;}
+.pomo-dot{width:12px;height:12px;border-radius:50%;border:2px solid var(--muted);transition:all 0.3s;}
+.pomo-dot.done{background:#ff6b9d;border-color:#ff6b9d;}
+.pomo-task-input{margin-top:10px;}
+
+/* ===== PIXEL ART ===== */
+.pixel-grid{display:inline-grid;border:1px solid var(--border);border-radius:4px;overflow:hidden;cursor:crosshair;touch-action:none;}
+.pixel-cell{width:100%;height:100%;transition:none;}
+.pixel-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px;}
+.pixel-color-palette{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px;}
+.pixel-color-chip{width:28px;height:28px;border-radius:6px;cursor:pointer;border:2px solid transparent;transition:all 0.15s;flex-shrink:0;}
+.pixel-color-chip.active{border-color:#fff;transform:scale(1.2);}
+.pixel-size-btn{padding:5px 10px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:12px;cursor:pointer;transition:all 0.15s;}
+.pixel-size-btn.active{border-color:var(--accent);color:var(--accent);}
+.pixel-canvas-wrap{overflow:auto;max-width:100%;display:flex;justify-content:center;margin-bottom:10px;}
+.pixel-saves{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;}
+.pixel-save-thumb{width:60px;height:60px;border-radius:8px;cursor:pointer;border:2px solid var(--border);image-rendering:pixelated;transition:all 0.15s;}
+.pixel-save-thumb:hover{border-color:var(--accent);}
+
+/* ===== SOMMEIL ===== */
+.sleep-form{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;}
+.sleep-row{display:flex;align-items:center;gap:10px;}
+.sleep-row label{font-size:13px;color:var(--muted);min-width:80px;}
+.sleep-quality{display:flex;gap:8px;}
+.sleep-star{font-size:22px;cursor:pointer;opacity:0.3;transition:opacity 0.15s;}
+.sleep-star.active{opacity:1;}
+.sleep-entry{display:flex;justify-content:space-between;align-items:center;padding:10px 13px;background:var(--surface2);border-radius:10px;margin-bottom:7px;border:1px solid var(--border);font-size:13px;}
+.sleep-entry .se-date{color:var(--muted);font-size:11px;}
+.sleep-entry .se-dur{font-weight:700;color:var(--accent);font-size:16px;}
+.sleep-entry .se-qual{color:#f7c948;}
+.sleep-chart-wrap{background:var(--surface2);border-radius:12px;padding:12px;border:1px solid var(--border);}
+
+/* ===== RAPPELS ===== */
+.reminder-item{display:flex;align-items:center;gap:10px;padding:11px 13px;background:var(--surface2);border-radius:10px;margin-bottom:7px;border:1px solid var(--border);}
+.reminder-item .ri-time{font-size:18px;font-weight:700;color:var(--accent);min-width:55px;}
+.reminder-item .ri-label{flex:1;font-size:14px;}
+.reminder-item .ri-days{font-size:11px;color:var(--muted);}
+.reminder-item .ri-del{background:none;border:none;color:var(--muted);font-size:16px;cursor:pointer;}
+.reminder-item .ri-del:hover{color:var(--danger);}
+.day-chips{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0;}
+.day-chip{padding:4px 10px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:12px;cursor:pointer;transition:all 0.15s;}
+.day-chip.active{border-color:var(--accent);color:var(--accent);background:rgba(124,111,247,.1);}
+
+/* ===== GRAPHS ===== */
+.chart-canvas-wrap{background:var(--surface2);border-radius:12px;padding:12px;border:1px solid var(--border);margin-bottom:12px;}
+
+/* ===== TETRIS ===== */
+#tetris-canvas{border-radius:8px;display:block;margin:0 auto;border:1px solid var(--border);}
+.tetris-side{text-align:center;padding:10px;}
+.tetris-next-wrap{background:var(--surface2);border-radius:10px;padding:10px;margin-bottom:10px;border:1px solid var(--border);}
+
+/* ===== MEMORY ===== */
+.memory-grid{display:grid;gap:8px;margin:12px 0;}
+.memory-card{aspect-ratio:1;border-radius:10px;background:var(--surface2);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:28px;transition:all 0.3s;user-select:none;}
+.memory-card.flipped{background:rgba(124,111,247,.15);border-color:var(--accent);}
+.memory-card.matched{background:rgba(67,224,178,.15);border-color:var(--accent3);cursor:default;}
+.memory-card.hidden-face{color:transparent;}
+
+/* ===== TAB MANAGER ===== */
+.tab-manager-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:800;display:flex;align-items:flex-end;justify-content:center;animation:fadeIn 0.2s ease;}
+.tab-manager-sheet{background:var(--surface);border-radius:20px 20px 0 0;width:100%;max-width:600px;max-height:85vh;overflow-y:auto;padding:20px;box-shadow:0 -8px 40px rgba(0,0,0,0.5);}
+.tab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;}
+.tab-item{background:var(--surface2);border:2px solid var(--border);border-radius:12px;padding:12px 8px;text-align:center;cursor:pointer;transition:all 0.15s;position:relative;user-select:none;}
+.tab-item.hidden-tab{opacity:0.35;border-style:dashed;}
+.tab-item.active-tool{border-color:var(--accent);background:rgba(124,111,247,0.12);}
+.tab-item-icon{font-size:20px;display:block;margin-bottom:3px;}
+.tab-item-name{font-size:10px;color:var(--muted);line-height:1.2;}
+#nav-tab-manager-btn{flex-shrink:0;padding:5px 9px;border-radius:50px;border:1px solid var(--border);background:var(--surface2);color:var(--muted);font-size:13px;cursor:pointer;white-space:nowrap;}
+#nav-tab-manager-btn:hover{color:var(--accent);border-color:var(--accent);}
+
+/* ===== COMPTE À REBOURS ===== */
+.countdown-item{background:var(--surface2);border-radius:14px;padding:16px;margin-bottom:10px;border:1px solid var(--border);}
+.countdown-item .cd-label{font-size:15px;font-weight:600;margin-bottom:2px;display:flex;justify-content:space-between;align-items:center;}
+.countdown-item .cd-date{font-size:12px;color:var(--muted);margin-bottom:10px;}
+.countdown-blocks{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;}
+.countdown-block{background:var(--surface);border-radius:10px;padding:9px 10px;text-align:center;border:1px solid var(--border);min-width:54px;}
+.countdown-block .cb-num{font-size:26px;font-weight:800;color:var(--accent);line-height:1;}
+.countdown-block .cb-unit{font-size:9px;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:0.5px;}
+.countdown-item.past .cb-num{color:var(--accent3);}
+.cd-del{background:none;border:none;color:var(--muted);font-size:15px;cursor:pointer;}
+.cd-del:hover{color:var(--danger);}
+
+/* ===== RECHERCHE GLOBALE ===== */
+.search-result{display:flex;align-items:center;gap:10px;padding:10px 13px;background:var(--surface2);border-radius:10px;margin-bottom:7px;border:1px solid var(--border);cursor:pointer;transition:all 0.15s;}
+.search-result:hover{border-color:var(--accent);}
+.search-result .sr-icon{font-size:18px;flex-shrink:0;}
+.search-result .sr-title{font-size:14px;font-weight:600;flex:1;}
+.search-result .sr-sub{font-size:12px;color:var(--muted);}
+.search-result .sr-source{font-size:11px;color:var(--accent);background:rgba(124,111,247,0.1);padding:2px 7px;border-radius:50px;white-space:nowrap;}
+mark.hl{background:rgba(124,111,247,0.3);border-radius:3px;padding:0 2px;color:var(--text);}
+
+/* ===== RÈGLE / NIVEAU ===== */
+.level-bubble-wrap{display:flex;justify-content:center;align-items:center;margin:16px 0;}
+.level-bubble{width:220px;height:90px;border-radius:45px;background:linear-gradient(135deg,var(--surface2),var(--surface));border:3px solid var(--border);position:relative;overflow:hidden;}
+.level-ball{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,0.3),transparent),var(--accent);position:absolute;top:50%;transform:translate(-50%,-50%);transition:left 0.1s ease;box-shadow:0 4px 16px rgba(124,111,247,0.6);}
+.level-center-line{position:absolute;left:50%;top:15%;height:70%;width:1px;background:rgba(255,255,255,0.2);}
+.level-angle{font-size:52px;font-weight:800;color:var(--accent);line-height:1;text-align:center;margin:8px 0 4px;}
+.level-status{font-size:14px;color:var(--muted);text-align:center;}
+.ruler-canvas-wrap{overflow-x:auto;margin-top:12px;}
+
 /* ===== PIN SETTINGS ===== */
-.pin-settings{display:flex;flex-direction:column;gap:10px;}
 .pin-pad-inline{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:220px;margin:0 auto;}
 .pin-key-inline{padding:13px;border-radius:12px;border:1px solid var(--border);background:var(--surface2);color:var(--text);font-size:19px;font-weight:700;cursor:pointer;text-align:center;transition:all 0.15s;}
 .pin-key-inline:active{transform:scale(0.92);background:var(--accent);color:#fff;}
@@ -692,6 +901,14 @@ th input{background:transparent;border:none;color:var(--text);font-weight:600;fo
     <div class="card-title">📊 Statistiques globales</div>
     <div class="stat-grid" id="stat-grid"></div>
     <div id="stat-details"></div>
+    <div class="chart-canvas-wrap" style="margin-top:12px;">
+      <div style="font-size:12px;color:var(--muted);margin-bottom:6px;">📝 Tâches complétées (7j)</div>
+      <canvas id="stat-task-chart" height="100"></canvas>
+    </div>
+    <div class="chart-canvas-wrap">
+      <div style="font-size:12px;color:var(--muted);margin-bottom:6px;">🎯 Habitudes (7j)</div>
+      <canvas id="stat-habit-chart" height="100"></canvas>
+    </div>
     <button class="btn btn-secondary btn-full" style="margin-top:6px;" onclick="renderStats()">🔄 Rafraîchir</button>
   </div>
 </div>
@@ -788,6 +1005,440 @@ th input{background:transparent;border:none;color:var(--text);font-weight:600;fo
   </div>
 </div>
 
+<!-- 18. COMPAGNON -->
+<div class="tool" id="tool-compagnon">
+  <div class="card">
+    <div class="companion-wrap">
+      <div class="companion-canvas-wrap">
+        <canvas id="companion-canvas" width="200" height="220" style="border-radius:20px;cursor:pointer;"></canvas>
+      </div>
+      <div class="companion-level" id="companion-level">Niveau 1</div>
+      <div class="companion-name" id="companion-name">🐾 Buddy</div>
+      <div class="companion-mood" id="companion-mood">Comment vas-tu aujourd'hui ?</div>
+      <div class="companion-xp-bar"><div class="companion-xp-fill" id="companion-xp-fill" style="width:0%"></div></div>
+      <div class="companion-xp-label" id="companion-xp-label">0 / 100 XP</div>
+    </div>
+    <div class="companion-stats">
+      <div class="companion-stat"><div class="csn" id="cstat-tasks">0</div><div class="csl">Tâches</div></div>
+      <div class="companion-stat"><div class="csn" id="cstat-habits">0</div><div class="csl">Habitudes</div></div>
+      <div class="companion-stat"><div class="csn" id="cstat-streak" style="color:#f7c948;">0🔥</div><div class="csl">Streak max</div></div>
+    </div>
+    <div style="margin-bottom:10px;">
+      <div style="font-size:13px;color:var(--muted);margin-bottom:6px;">Renommer ton compagnon :</div>
+      <div class="row"><input type="text" id="companion-name-input" placeholder="Nom..."><button class="btn btn-primary" onclick="renameCompanion()">OK</button></div>
+    </div>
+    <div class="card-title" style="font-size:13px;">📜 Journal du compagnon</div>
+    <div class="companion-feed-log" id="companion-log"></div>
+  </div>
+</div>
+
+<!-- 19. WIKIPEDIA -->
+<div class="tool" id="tool-wikipedia">
+  <div class="card">
+    <div class="card-title">📖 Wikipédia du jour</div>
+    <div id="wiki-content">
+      <div class="empty"><div class="empty-icon">📖</div>Chargement en cours...<br><span style="font-size:11px;margin-top:6px;display:block;">Nécessite une connexion internet</span></div>
+    </div>
+    <button class="btn btn-secondary btn-full" onclick="loadWikipedia(true)" style="margin-top:8px;">🔄 Autre article</button>
+  </div>
+  <div class="card" id="wiki-history-card" style="display:none;">
+    <div class="card-title" style="font-size:13px;">📚 Articles lus récemment</div>
+    <div id="wiki-history"></div>
+  </div>
+</div>
+
+<!-- 20. CARTE MONDE -->
+<div class="tool" id="tool-carte">
+  <div class="card">
+    <div class="card-title">🗺️ Carte du Monde</div>
+    <div class="map-mode-btns">
+      <button class="map-mode-btn active" id="map-mode-visited" onclick="setMapMode('visited')" style="background:#43e0b2;color:#000;border-color:#43e0b2;">✅ Visité</button>
+      <button class="map-mode-btn" id="map-mode-wishlist" onclick="setMapMode('wishlist')" style="">⭐ Wishlist</button>
+      <button class="map-mode-btn" id="map-mode-lived" onclick="setMapMode('lived')" style="">🏠 Vécu</button>
+      <button class="map-mode-btn" id="map-mode-none" onclick="setMapMode('none')" style="">❌ Effacer</button>
+    </div>
+    <div class="world-map-wrap" id="world-map-wrap">
+      <div class="map-tooltip" id="map-tooltip"></div>
+      <svg id="world-svg" viewBox="0 0 2000 1000" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;"></svg>
+    </div>
+    <div class="map-legend">
+      <div class="map-legend-item"><div class="map-legend-dot" style="background:#43e0b2;"></div>Visité</div>
+      <div class="map-legend-item"><div class="map-legend-dot" style="background:#f7c948;"></div>Wishlist</div>
+      <div class="map-legend-item"><div class="map-legend-dot" style="background:#7c6ff7;"></div>Vécu</div>
+    </div>
+    <div class="map-country-info" id="map-country-info" style="display:none;"></div>
+    <div style="display:flex;gap:8px;margin-top:10px;">
+      <div style="flex:1;background:var(--surface2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border);">
+        <div style="font-size:22px;font-weight:700;color:var(--accent3);" id="map-count-visited">0</div>
+        <div style="font-size:11px;color:var(--muted);">Pays visités</div>
+      </div>
+      <div style="flex:1;background:var(--surface2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border);">
+        <div style="font-size:22px;font-weight:700;color:#f7c948;" id="map-count-wishlist">0</div>
+        <div style="font-size:11px;color:var(--muted);">Wishlist</div>
+      </div>
+      <div style="flex:1;background:var(--surface2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border);">
+        <div style="font-size:22px;font-weight:700;color:var(--accent);" id="map-count-lived">0</div>
+        <div style="font-size:11px;color:var(--muted);">Pays vécus</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 21. JEUX -->
+<div class="tool" id="tool-jeux">
+  <div class="card">
+    <div class="card-title">🎮 Mini-Jeux</div>
+    <div class="game-select">
+      <div class="game-select-btn active" id="game-btn-2048" onclick="selectGame('2048')">⬛<div>2048</div></div>
+      <div class="game-select-btn" id="game-btn-snake" onclick="selectGame('snake')">🐍<div>Snake</div></div>
+      <div class="game-select-btn" id="game-btn-tetris" onclick="selectGame('tetris')">🟦<div>Tetris</div></div>
+      <div class="game-select-btn" id="game-btn-memory" onclick="selectGame('memory')">🧠<div>Memory</div></div>
+    </div>
+    <!-- 2048 -->
+    <div id="game-2048">
+      <div class="game-score" id="score-2048">Score : 0</div>
+      <div id="grid-2048"></div>
+      <div style="display:flex;gap:8px;justify-content:center;">
+        <button class="btn btn-primary" onclick="init2048()">🔄 Nouvelle partie</button>
+        <span style="font-size:13px;color:var(--muted);align-self:center;">Meilleur : <strong id="best-2048">0</strong></span>
+      </div>
+      <div class="dpad" style="margin-top:14px;">
+        <div></div><button class="dpad-btn" onclick="move2048('up')">↑</button><div></div>
+        <button class="dpad-btn" onclick="move2048('left')">←</button><div></div><button class="dpad-btn" onclick="move2048('right')">→</button>
+        <div></div><button class="dpad-btn" onclick="move2048('down')">↓</button><div></div>
+      </div>
+    </div>
+    <!-- SNAKE -->
+    <div id="game-snake" style="display:none;">
+      <div class="game-score" id="score-snake">Score : 0</div>
+      <canvas id="snake-canvas" width="300" height="300"></canvas>
+      <div class="game-over-msg" id="snake-over">
+        <div class="go-title">💀 Game Over !</div>
+        <div style="color:var(--muted);font-size:14px;margin-bottom:12px;">Score : <span id="snake-final-score">0</span> | Meilleur : <span id="snake-best">0</span></div>
+        <button class="btn btn-primary" onclick="initSnake()">🔄 Rejouer</button>
+      </div>
+      <div class="dpad" style="margin-top:10px;">
+        <div></div><button class="dpad-btn" onclick="snakeDir(0,-1)">↑</button><div></div>
+        <button class="dpad-btn" onclick="snakeDir(-1,0)">←</button><div></div><button class="dpad-btn" onclick="snakeDir(1,0)">→</button>
+        <div></div><button class="dpad-btn" onclick="snakeDir(0,1)">↓</button><div></div>
+      </div>
+    </div>
+    <!-- TETRIS -->
+    <div id="game-tetris" style="display:none;">
+      <div style="display:flex;gap:12px;align-items:flex-start;justify-content:center;">
+        <canvas id="tetris-canvas" width="180" height="360" style="border-radius:8px;border:1px solid var(--border);"></canvas>
+        <div class="tetris-side" style="min-width:80px;">
+          <div class="tetris-next-wrap">
+            <div style="font-size:11px;color:var(--muted);margin-bottom:6px;">SUIVANT</div>
+            <canvas id="tetris-next" width="80" height="80"></canvas>
+          </div>
+          <div style="font-size:12px;color:var(--muted);">Score</div>
+          <div style="font-size:20px;font-weight:700;color:var(--accent);" id="tetris-score">0</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:8px;">Lignes</div>
+          <div style="font-size:18px;font-weight:700;" id="tetris-lines">0</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:8px;">Record</div>
+          <div style="font-size:16px;font-weight:700;color:var(--accent2);" id="tetris-best">0</div>
+        </div>
+      </div>
+      <div id="tetris-over" style="display:none;text-align:center;padding:16px 0;">
+        <div style="font-size:22px;font-weight:700;margin-bottom:8px;">💀 Game Over !</div>
+        <button class="btn btn-primary" onclick="initTetris()">🔄 Rejouer</button>
+      </div>
+      <div class="dpad" style="margin-top:12px;">
+        <div></div><button class="dpad-btn" onclick="tetrisRotate()">↻</button><div></div>
+        <button class="dpad-btn" onclick="tetrisMove(-1)">←</button>
+        <button class="dpad-btn" onclick="tetrisDrop()">↓↓</button>
+        <button class="dpad-btn" onclick="tetrisMove(1)">→</button>
+        <div></div><button class="dpad-btn" onclick="tetrisSoftDrop()">↓</button><div></div>
+      </div>
+    </div>
+    <!-- MEMORY -->
+    <div id="game-memory" style="display:none;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <div style="font-size:14px;">⏱️ <span id="memory-time">0s</span> | 🔁 <span id="memory-moves">0</span> coups</div>
+        <button class="btn btn-primary" style="padding:6px 12px;font-size:13px;" onclick="initMemory()">🔄 Rejouer</button>
+      </div>
+      <div style="display:flex;gap:8px;margin-bottom:10px;">
+        <button class="btn btn-secondary" style="flex:1;font-size:12px;" onclick="setMemorySize(4)" id="mem-btn-4">4×4</button>
+        <button class="btn btn-secondary" style="flex:1;font-size:12px;" onclick="setMemorySize(6)" id="mem-btn-6">6×4</button>
+      </div>
+      <div class="memory-grid" id="memory-grid"></div>
+      <div id="memory-win" style="display:none;text-align:center;padding:16px;">
+        <div style="font-size:32px;margin-bottom:8px;">🎉</div>
+        <div style="font-size:18px;font-weight:700;">Gagné en <span id="memory-win-time"></span> et <span id="memory-win-moves"></span> coups !</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:6px;">Record : <span id="memory-best"></span> coups</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 22. GALERIE -->
+<div class="tool" id="tool-galerie">
+  <div class="card">
+    <div class="card-title">📸 Galerie de Photos</div>
+    <label class="btn btn-primary btn-full" style="cursor:pointer;text-align:center;display:block;">
+      📂 Ajouter des photos
+      <input type="file" accept="image/*" multiple style="display:none" onchange="importPhotos(event)">
+    </label>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </div>
+  <div class="gallery-lightbox" id="gallery-lightbox">
+    <button class="lb-close" onclick="closeLightbox()">×</button>
+    <img id="lb-img" src="" alt="">
+    <div class="lb-note" id="lb-note"></div>
+    <div style="display:flex;gap:10px;margin-top:14px;">
+      <button class="btn btn-secondary" onclick="editPhotoNote()">✏️ Modifier la note</button>
+      <button class="btn btn-danger" onclick="deleteCurrentPhoto()">🗑️ Supprimer</button>
+    </div>
+  </div>
+</div>
+
+<!-- 23. CITATIONS -->
+<div class="tool" id="tool-citations">
+  <div class="card">
+    <div class="card-title">💬 Citations Motivantes</div>
+    <div class="quote-category" id="quote-cats"></div>
+    <div class="quote-card">
+      <div class="quote-text" id="quote-text">« Clique sur le bouton pour une citation ! »</div>
+      <div class="quote-author" id="quote-author">— ?</div>
+      <button class="quote-fav" id="quote-fav-btn" onclick="toggleQuoteFav()" title="Favoris">🤍</button>
+    </div>
+    <button class="btn btn-primary btn-full" onclick="nextQuote()">✨ Nouvelle citation</button>
+  </div>
+  <div class="card">
+    <div class="card-title" style="font-size:13px;">❤️ Citations favorites</div>
+    <div class="quote-favs" id="quote-favs"></div>
+  </div>
+</div>
+
+<!-- 24. QR CODE -->
+<div class="tool" id="tool-qrcode">
+  <div class="card">
+    <div class="card-title">🔗 Générateur de QR Code</div>
+    <textarea id="qr-input" placeholder="Saisis un texte, une URL, un numéro..." style="min-height:80px;margin-bottom:10px;" oninput="generateQR()"></textarea>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
+      <button class="btn btn-secondary" style="font-size:12px;padding:5px 10px;" onclick="qrPreset('https://')">🌐 URL</button>
+      <button class="btn btn-secondary" style="font-size:12px;padding:5px 10px;" onclick="qrPreset('tel:')">📞 Tél.</button>
+      <button class="btn btn-secondary" style="font-size:12px;padding:5px 10px;" onclick="qrPreset('mailto:')">📧 Email</button>
+      <button class="btn btn-secondary" style="font-size:12px;padding:5px 10px;" onclick="qrPreset('WIFI:S:NomWifi;T:WPA;P:MotDePasse;;')">📶 WiFi</button>
+    </div>
+    <div class="qr-display" id="qr-display" style="display:none;"><canvas id="qr-canvas" width="200" height="200"></canvas></div>
+    <button class="btn btn-primary btn-full" id="qr-download-btn" style="display:none;" onclick="downloadQR()">💾 Télécharger le QR</button>
+  </div>
+</div>
+
+<!-- 25. CONVERTISSEUR -->
+<div class="tool" id="tool-convertisseur">
+  <div class="card">
+    <div class="card-title">📐 Convertisseur d'Unités</div>
+    <div class="conv-tabs" id="conv-tabs"></div>
+    <div id="conv-content"></div>
+  </div>
+</div>
+
+<!-- POMODORO -->
+<div class="tool" id="tool-pomodoro">
+  <div class="card">
+    <div class="card-title">🍅 Pomodoro</div>
+    <div class="pomo-mode-btns">
+      <button class="pomo-mode-btn active" id="pomo-btn-work" onclick="setPomoMode('work')">🍅 Travail</button>
+      <button class="pomo-mode-btn" id="pomo-btn-short" onclick="setPomoMode('short')">☕ Courte pause</button>
+      <button class="pomo-mode-btn" id="pomo-btn-long" onclick="setPomoMode('long')">🛋️ Longue pause</button>
+    </div>
+    <div class="pomo-ring-wrap">
+      <div class="pomo-ring">
+        <canvas id="pomo-canvas" width="200" height="200"></canvas>
+        <div class="pomo-ring-center">
+          <div class="pomo-time" id="pomo-time">25:00</div>
+          <div class="pomo-label" id="pomo-label">Travail</div>
+        </div>
+      </div>
+    </div>
+    <div class="pomo-session-dots" id="pomo-dots"></div>
+    <div style="display:flex;gap:8px;justify-content:center;margin-bottom:12px;">
+      <button class="btn btn-primary" id="pomo-start-btn" onclick="pomoToggle()" style="min-width:120px;">▶ Démarrer</button>
+      <button class="btn btn-secondary" onclick="pomoReset()">↺ Reset</button>
+    </div>
+    <input type="text" id="pomo-task-input" placeholder="Sur quoi tu travailles ?..." class="pomo-task-input">
+    <div style="margin-top:14px;display:flex;justify-content:space-between;font-size:13px;color:var(--muted);">
+      <span>Sessions aujourd'hui : <strong id="pomo-sessions-today" style="color:var(--accent);">0</strong></span>
+      <span>Total : <strong id="pomo-sessions-total" style="color:var(--accent2);">0</strong></span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title" style="font-size:13px;">⚙️ Durées personnalisées</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+      <div><label style="font-size:11px;color:var(--muted);">Travail (min)</label><input type="number" id="pomo-dur-work" value="25" min="1" max="90" oninput="pomoUpdateDurs()"></div>
+      <div><label style="font-size:11px;color:var(--muted);">Courte (min)</label><input type="number" id="pomo-dur-short" value="5" min="1" max="30" oninput="pomoUpdateDurs()"></div>
+      <div><label style="font-size:11px;color:var(--muted);">Longue (min)</label><input type="number" id="pomo-dur-long" value="15" min="1" max="60" oninput="pomoUpdateDurs()"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PIXEL ART -->
+<div class="tool" id="tool-pixelart">
+  <div class="card">
+    <div class="card-title">🎨 Pixel Art</div>
+    <div class="pixel-toolbar">
+      <span style="font-size:12px;color:var(--muted);">Grille :</span>
+      <button class="pixel-size-btn active" id="px-size-16" onclick="initPixelGrid(16)">16×16</button>
+      <button class="pixel-size-btn" id="px-size-32" onclick="initPixelGrid(32)">32×32</button>
+      <button class="pixel-size-btn" id="px-size-8" onclick="initPixelGrid(8)">8×8</button>
+      <button class="btn btn-secondary" style="padding:5px 10px;font-size:12px;" onclick="pixelFill()">🪣 Remplir</button>
+      <button class="btn btn-danger" style="padding:5px 10px;font-size:12px;" onclick="pixelClear()">🗑️ Effacer</button>
+    </div>
+    <div class="pixel-color-palette" id="pixel-palette"></div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+      <span style="font-size:12px;color:var(--muted);">Couleur libre :</span>
+      <input type="color" id="pixel-custom-color" value="#7c6ff7" style="width:36px;height:28px;border:none;background:none;cursor:pointer;padding:0;" oninput="setPixelColor(this.value)">
+      <div id="pixel-current-color" style="width:28px;height:28px;border-radius:6px;border:2px solid var(--accent);background:#7c6ff7;"></div>
+      <span id="pixel-tool-label" style="font-size:12px;color:var(--muted);">✏️ Dessin</span>
+      <button class="btn btn-secondary" style="padding:4px 9px;font-size:12px;" onclick="togglePixelEraser()">🧹 Gomme</button>
+    </div>
+    <div class="pixel-canvas-wrap" id="pixel-canvas-wrap"></div>
+    <div style="display:flex;gap:8px;margin-bottom:10px;">
+      <button class="btn btn-primary" style="flex:1;" onclick="savePixelArt()">💾 Sauvegarder</button>
+      <button class="btn btn-secondary" style="flex:1;" onclick="downloadPixelArt()">📥 Télécharger PNG</button>
+    </div>
+    <div class="card-title" style="font-size:13px;">🖼️ Créations sauvegardées</div>
+    <div class="pixel-saves" id="pixel-saves"></div>
+  </div>
+</div>
+
+<!-- SOMMEIL -->
+<div class="tool" id="tool-sommeil">
+  <div class="card">
+    <div class="card-title">🌙 Suivi du Sommeil</div>
+    <div class="sleep-form">
+      <div class="sleep-row"><label>📅 Date</label><input type="date" id="sleep-date" style="flex:1;"></div>
+      <div class="sleep-row"><label>😴 Coucher</label><input type="time" id="sleep-start" style="flex:1;"></div>
+      <div class="sleep-row"><label>☀️ Lever</label><input type="time" id="sleep-end" style="flex:1;"></div>
+      <div class="sleep-row">
+        <label>⭐ Qualité</label>
+        <div class="sleep-quality" id="sleep-quality-stars">
+          <span class="sleep-star" data-val="1" onclick="setSleepQuality(1)">⭐</span>
+          <span class="sleep-star" data-val="2" onclick="setSleepQuality(2)">⭐</span>
+          <span class="sleep-star" data-val="3" onclick="setSleepQuality(3)">⭐</span>
+          <span class="sleep-star" data-val="4" onclick="setSleepQuality(4)">⭐</span>
+          <span class="sleep-star" data-val="5" onclick="setSleepQuality(5)">⭐</span>
+        </div>
+      </div>
+      <input type="text" id="sleep-note" placeholder="Note (optionnel)...">
+    </div>
+    <button class="btn btn-primary btn-full" onclick="addSleepEntry()" style="margin-top:0;">＋ Enregistrer</button>
+  </div>
+  <div class="card">
+    <div class="card-title" style="font-size:13px;">📊 Graphique (7 dernières nuits)</div>
+    <div class="sleep-chart-wrap"><canvas id="sleep-chart" height="120"></canvas></div>
+    <div style="display:flex;gap:10px;text-align:center;margin-top:10px;">
+      <div style="flex:1;background:var(--surface2);border-radius:8px;padding:8px;border:1px solid var(--border);">
+        <div style="font-size:20px;font-weight:700;color:var(--accent);" id="sleep-avg">—</div>
+        <div style="font-size:11px;color:var(--muted);">Moy. heures</div>
+      </div>
+      <div style="flex:1;background:var(--surface2);border-radius:8px;padding:8px;border:1px solid var(--border);">
+        <div style="font-size:20px;font-weight:700;color:#f7c948;" id="sleep-avg-qual">—</div>
+        <div style="font-size:11px;color:var(--muted);">Moy. qualité</div>
+      </div>
+      <div style="flex:1;background:var(--surface2);border-radius:8px;padding:8px;border:1px solid var(--border);">
+        <div style="font-size:20px;font-weight:700;color:var(--accent3);" id="sleep-count">0</div>
+        <div style="font-size:11px;color:var(--muted);">Nuits enreg.</div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title" style="font-size:13px;">📋 Historique</div>
+    <div id="sleep-list"></div>
+  </div>
+</div>
+
+<!-- RAPPELS -->
+<div class="tool" id="tool-rappels">
+  <div class="card">
+    <div class="card-title">🔔 Rappels</div>
+    <div id="notif-status" style="font-size:13px;color:var(--muted);margin-bottom:12px;padding:10px;background:var(--surface2);border-radius:10px;border:1px solid var(--border);"></div>
+    <div class="row"><input type="text" id="reminder-label" placeholder="Libellé du rappel..."></div>
+    <div class="row">
+      <input type="time" id="reminder-time" style="flex:1;">
+    </div>
+    <div class="day-chips" id="reminder-days">
+      <button class="day-chip" data-day="1" onclick="toggleReminderDay(1,this)">Lun</button>
+      <button class="day-chip" data-day="2" onclick="toggleReminderDay(2,this)">Mar</button>
+      <button class="day-chip" data-day="3" onclick="toggleReminderDay(3,this)">Mer</button>
+      <button class="day-chip" data-day="4" onclick="toggleReminderDay(4,this)">Jeu</button>
+      <button class="day-chip" data-day="5" onclick="toggleReminderDay(5,this)">Ven</button>
+      <button class="day-chip" data-day="6" onclick="toggleReminderDay(6,this)">Sam</button>
+      <button class="day-chip" data-day="0" onclick="toggleReminderDay(0,this)">Dim</button>
+    </div>
+    <button class="btn btn-primary btn-full" onclick="addReminder()" style="margin-top:4px;">＋ Ajouter le rappel</button>
+    <div id="reminder-list" style="margin-top:12px;"></div>
+  </div>
+</div>
+
+<!-- TAB MANAGER OVERLAY -->
+<div id="tab-manager-overlay" style="display:none;" onclick="closeTabManagerOutside(event)">
+  <div class="tab-manager-sheet">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+      <div style="font-size:17px;font-weight:700;">⚙️ Gérer les onglets</div>
+      <button style="background:var(--surface2);border:none;color:var(--text);width:32px;height:32px;border-radius:50%;font-size:18px;cursor:pointer;" onclick="closeTabManager()">×</button>
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:4px;">Appuie sur un outil pour l'afficher ou le masquer dans la barre de navigation.</p>
+    <div class="tab-grid" id="tab-manager-grid"></div>
+    <button class="btn btn-secondary btn-full" style="margin-top:14px;" onclick="resetHiddenTabs()">↺ Tout réafficher</button>
+  </div>
+</div>
+
+<!-- COMPTE À REBOURS -->
+<div class="tool" id="tool-countdown">
+  <div class="card">
+    <div class="card-title">📆 Compte à rebours</div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px;">
+      <input type="text" id="cd-label" placeholder="Nom de l'événement... (ex: Vacances 🏖️)">
+      <div class="row">
+        <input type="date" id="cd-date" style="flex:1;">
+        <input type="text" id="cd-emoji" placeholder="Emoji" style="width:60px;text-align:center;font-size:20px;">
+      </div>
+    </div>
+    <button class="btn btn-primary btn-full" onclick="addCountdown()" style="margin-top:0;">＋ Ajouter</button>
+  </div>
+  <div id="countdown-list"></div>
+</div>
+
+<!-- RECHERCHE GLOBALE -->
+<div class="tool" id="tool-recherche">
+  <div class="card">
+    <div class="card-title">🔍 Recherche Globale</div>
+    <input type="text" id="search-input" placeholder="Rechercher dans tous tes outils..." oninput="globalSearch(this.value)" style="margin-bottom:10px;">
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<!-- RÈGLE / NIVEAU -->
+<div class="tool" id="tool-niveau">
+  <div class="card">
+    <div class="card-title">📏 Niveau à bulle</div>
+    <div style="text-align:center;">
+      <div class="level-angle" id="level-angle">0°</div>
+      <div class="level-status" id="level-status">🎯 À plat</div>
+    </div>
+    <div class="level-bubble-wrap">
+      <div class="level-bubble" id="level-bubble">
+        <div class="level-center-line"></div>
+        <div class="level-ball" id="level-ball" style="left:50%;"></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:4px;">
+      <button class="btn btn-secondary btn-full" onclick="calibrateLevel()" id="level-cal-btn">🎯 Calibrer (surface plate)</button>
+      <button class="btn btn-danger" style="width:44px;padding:0;" onclick="resetLevelCal()" title="Réinitialiser">↺</button>
+    </div>
+    <div style="margin-top:16px;border-top:1px solid var(--border);padding-top:16px;">
+      <div class="card-title" style="font-size:14px;margin-bottom:10px;">📏 Règle</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">Pose ton téléphone sur l'objet à mesurer, bord contre bord.</div>
+      <div class="ruler-canvas-wrap"><canvas id="ruler-canvas" height="80"></canvas></div>
+      <div style="text-align:center;margin-top:8px;font-size:13px;color:var(--muted);">Largeur de l'écran : <strong id="screen-width-cm">—</strong> cm (approx.)</div>
+    </div>
+  </div>
+</div>
+
 </div><!-- end .content -->
 <div class="toast" id="toast"></div>
 <audio id="audio-player" style="display:none;"></audio>
@@ -798,19 +1449,73 @@ th input{background:transparent;border:none;color:var(--text);font-weight:600;fo
 // ============================================================
 const $=id=>document.getElementById(id);
 const tools=[
-  {id:'compteur',label:'🔢 Compteur'},{id:'aleatoire',label:'🎲 Aléatoire'},
-  {id:'minuteur',label:'⏱️ Minuteur'},{id:'taches',label:'📝 Tâches'},
-  {id:'ouinon',label:'🎯 Oui/Non'},{id:'couleur',label:'🎨 Couleur'},
-  {id:'tableau',label:'📊 Tableau'},{id:'cartemental',label:'🧠 Carte mentale'},
-  {id:'revision',label:'🃏 Révision'},{id:'habitudes',label:'🎯 Habitudes'},
-  {id:'journal',label:'📓 Journal'},{id:'melangeur',label:'🔀 Mélangeur'},
-  {id:'calculatrice',label:'🧮 Calc.'},{id:'stats',label:'📊 Stats'},
-  {id:'musique',label:'🎵 Musique'},{id:'theme',label:'⚙️ Thème'},
-  {id:'reglages',label:'🔧 Réglages'},
+  {id:'compteur',label:'🔢 Compteur',icon:'🔢'},{id:'aleatoire',label:'🎲 Aléatoire',icon:'🎲'},
+  {id:'minuteur',label:'⏱️ Minuteur',icon:'⏱️'},{id:'taches',label:'📝 Tâches',icon:'📝'},
+  {id:'ouinon',label:'🎯 Oui/Non',icon:'🎯'},{id:'couleur',label:'🎨 Couleur',icon:'🎨'},
+  {id:'tableau',label:'📊 Tableau',icon:'📊'},{id:'cartemental',label:'🧠 Carte mentale',icon:'🧠'},
+  {id:'revision',label:'🃏 Révision',icon:'🃏'},{id:'habitudes',label:'🎯 Habitudes',icon:'🎯'},
+  {id:'journal',label:'📓 Journal',icon:'📓'},{id:'melangeur',label:'🔀 Mélangeur',icon:'🔀'},
+  {id:'calculatrice',label:'🧮 Calc.',icon:'🧮'},{id:'stats',label:'📊 Stats',icon:'📊'},
+  {id:'musique',label:'🎵 Musique',icon:'🎵'},
+  {id:'compagnon',label:'🐧 Compagnon',icon:'🐧'},
+  {id:'wikipedia',label:'📖 Wikipédia',icon:'📖'},
+  {id:'carte',label:'🗺️ Carte',icon:'🗺️'},
+  {id:'jeux',label:'🎮 Jeux',icon:'🎮'},
+  {id:'galerie',label:'📸 Galerie',icon:'📸'},
+  {id:'citations',label:'💬 Citations',icon:'💬'},
+  {id:'qrcode',label:'🔗 QR Code',icon:'🔗'},
+  {id:'convertisseur',label:'📐 Convertir',icon:'📐'},
+  {id:'pomodoro',label:'🍅 Pomodoro',icon:'🍅'},
+  {id:'pixelart',label:'🎨 Pixel Art',icon:'🎨'},
+  {id:'sommeil',label:'🌙 Sommeil',icon:'🌙'},
+  {id:'rappels',label:'🔔 Rappels',icon:'🔔'},
+  {id:'countdown',label:'📆 Compte à rebours',icon:'📆'},
+  {id:'recherche',label:'🔍 Recherche',icon:'🔍'},
+  {id:'niveau',label:'📏 Niveau',icon:'📏'},
+  {id:'theme',label:'⚙️ Thème',icon:'⚙️'},
+  {id:'reglages',label:'🔧 Réglages',icon:'🔧'},
 ];
 let currentTool='compteur';
-function buildNav(){const nav=$('nav');tools.forEach(t=>{const btn=document.createElement('button');btn.className='nav-btn'+(t.id===currentTool?' active':'');btn.textContent=t.label;btn.onclick=()=>switchTool(t.id);nav.appendChild(btn);});}
-function switchTool(id){document.querySelectorAll('.tool').forEach(el=>el.classList.remove('active'));document.querySelectorAll('.nav-btn').forEach(el=>el.classList.remove('active'));$('tool-'+id).classList.add('active');document.querySelectorAll('.nav-btn')[tools.findIndex(t=>t.id===id)].classList.add('active');currentTool=id;if(id==='stats')renderStats();if(id==='habitudes')renderHabits();if(id==='journal')renderJournal();}
+let hiddenTabs=load('hidden-tabs',[]);
+
+function buildNav(){
+  const nav=$('nav');
+  nav.innerHTML='';
+  tools.forEach(t=>{
+    if(hiddenTabs.includes(t.id))return;
+    const btn=document.createElement('button');
+    btn.className='nav-btn'+(t.id===currentTool?' active':'');
+    btn.textContent=t.label;
+    btn.onclick=()=>switchTool(t.id);
+    nav.appendChild(btn);
+  });
+  // Tab manager button
+  const mgr=document.createElement('button');
+  mgr.id='nav-tab-manager-btn';mgr.textContent='⚙️ Onglets';
+  mgr.onclick=openTabManager;nav.appendChild(mgr);
+}
+function switchTool(id){
+  document.querySelectorAll('.tool').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(el=>el.classList.remove('active'));
+  const toolEl=$('tool-'+id);if(toolEl)toolEl.classList.add('active');
+  const navIdx=tools.filter(t=>!hiddenTabs.includes(t.id)).findIndex(t=>t.id===id);
+  if(navIdx>=0)document.querySelectorAll('.nav-btn')[navIdx]?.classList.add('active');
+  currentTool=id;
+  if(id==='stats'){renderStats();setTimeout(drawStatsCharts,50);}
+  if(id==='habitudes')renderHabits();
+  if(id==='journal')renderJournal();
+  if(id==='compagnon')renderCompanion();
+  if(id==='wikipedia')loadWikipedia();
+  if(id==='carte')initWorldMap();
+  if(id==='jeux')init2048();
+  if(id==='galerie')renderGallery();
+  if(id==='sommeil'){renderSleep();setTimeout(()=>drawSleepChart(sleepData.slice(0,7).reverse()),50);}
+  if(id==='rappels'){renderReminders();initNotifications();}
+  if(id==='pixelart'){renderPixelCanvas();renderPixelSaves();}
+  if(id==='countdown')renderCountdowns();
+  if(id==='recherche'){const sri=$('search-input');if(sri){sri.focus();globalSearch(sri.value);}}
+  if(id==='niveau'){initLevel();setTimeout(drawRuler,100);}
+}
 function showToast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2300);}
 function save(key,val){try{localStorage.setItem('bat_'+key,JSON.stringify(val));}catch(e){}}
 function load(key,def){try{const v=localStorage.getItem('bat_'+key);return v!==null?JSON.parse(v):def;}catch{return def;}}
@@ -1494,6 +2199,1726 @@ const manifestLink=document.createElement('link');manifestLink.rel='manifest';ma
 })();
 
 // ============================================================
+//  COMPAGNON VIRTUEL
+// ============================================================
+let companionData = load('companion', {name:'Buddy', xp:0, level:1, log:[]});
+
+function saveCompanion(){save('companion',companionData);}
+
+function addCompanionXP(amount, reason){
+  companionData.xp += amount;
+  const xpNeeded = companionData.level * 100;
+  if(companionData.xp >= xpNeeded){companionData.xp -= xpNeeded; companionData.level++; companionData.log.unshift({t:Date.now(),msg:`🎉 Niveau ${companionData.level} atteint !`});}
+  companionData.log.unshift({t:Date.now(),msg:reason});
+  if(companionData.log.length>20)companionData.log.pop();
+  saveCompanion(); renderCompanion();
+}
+
+function renameCompanion(){
+  const n=$('companion-name-input').value.trim();
+  if(!n)return;
+  companionData.name=n; $('companion-name-input').value='';
+  saveCompanion(); renderCompanion(); showToast('🐾 Renommé !');
+}
+
+function renderCompanion(){
+  const doneTasks=tasks.filter(t=>t.done).length;
+  const today=todayStr();
+  const todayHabits=Object.keys(habitChecks[today]||{}).filter(id=>habitChecks[today][id]).length;
+  const maxStreak=habits.reduce((m,h)=>Math.max(m,getHabitStreak(h.id)),0);
+  const level=companionData.level;
+  const xpNeeded=level*100;
+  const pct=Math.min(100,Math.round(companionData.xp/xpNeeded*100));
+
+  // Mood based on activity
+  const moods=['😴 Un peu endormi...','😊 En forme !','😄 Super motivé !','🌟 Au top !','🚀 Invincible !'];
+  const moodIdx=Math.min(moods.length-1, Math.floor((todayHabits+doneTasks/3)/2));
+
+  $('companion-level').textContent=`Niveau ${level}`;
+  $('companion-name').textContent=`🐾 ${companionData.name}`;
+  $('companion-mood').textContent=moods[moodIdx];
+  $('companion-xp-fill').style.width=pct+'%';
+  $('companion-xp-label').textContent=`${companionData.xp} / ${xpNeeded} XP`;
+  $('cstat-tasks').textContent=doneTasks;
+  $('cstat-habits').textContent=todayHabits;
+  $('cstat-streak').textContent=maxStreak+'🔥';
+
+  // Draw companion
+  drawCompanion(moodIdx);
+
+  // Log
+  const log=$('companion-log'); log.innerHTML='';
+  if(!companionData.log.length){log.innerHTML='<div class="empty" style="padding:10px;">Aucune activité pour l\'instant</div>';return;}
+  companionData.log.slice(0,10).forEach(l=>{
+    const d=document.createElement('div'); d.className='companion-log-item';
+    d.textContent=l.msg;log.appendChild(d);
+  });
+}
+
+let companionBlink = 0;
+
+function drawCompanion(moodIdx){
+  const canvas=$('companion-canvas'); if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  const W=200, H=220;
+  canvas.width=W; canvas.height=H;
+  ctx.clearRect(0,0,W,H);
+
+  // Color palette by level
+  const pals=[
+    {body:'#2c2c54',belly:'#f5f5ff',beak:'#ffb347',feet:'#ffb347',band:'#7c6ff7'},
+    {body:'#1a472a',belly:'#f0fff4',beak:'#ff9f43',feet:'#ff9f43',band:'#43e0b2'},
+    {body:'#4a1942',belly:'#fff0fb',beak:'#ff6b9d',feet:'#ff6b9d',band:'#ff6b9d'},
+    {body:'#3d2c00',belly:'#fffde8',beak:'#f7c948',feet:'#f7c948',band:'#f7c948'},
+    {body:'#003d5c',belly:'#e8f8ff',beak:'#5ac8ff',feet:'#5ac8ff',band:'#5ac8ff'},
+  ];
+  const p=pals[Math.min(companionData.level-1, pals.length-1)];
+  const cx=100;
+
+  // --- SHADOW ---
+  ctx.fillStyle='rgba(0,0,0,0.15)';
+  ctx.beginPath();ctx.ellipse(cx,210,32,7,0,0,Math.PI*2);ctx.fill();
+
+  // --- FEET ---
+  ctx.fillStyle=p.feet;
+  // left foot
+  ctx.beginPath();ctx.ellipse(cx-20,200,16,8,Math.PI*0.1,0,Math.PI*2);ctx.fill();
+  // right foot
+  ctx.beginPath();ctx.ellipse(cx+20,200,16,8,-Math.PI*0.1,0,Math.PI*2);ctx.fill();
+
+  // --- BODY (big black oval) ---
+  ctx.fillStyle=p.body;
+  ctx.beginPath();ctx.ellipse(cx,148,54,68,0,0,Math.PI*2);ctx.fill();
+
+  // --- WHITE BELLY (front patch) ---
+  ctx.fillStyle=p.belly;
+  ctx.beginPath();ctx.ellipse(cx,155,33,50,0,0,Math.PI*2);ctx.fill();
+
+  // --- WINGS ---
+  // left wing
+  ctx.fillStyle=p.body;
+  ctx.beginPath();
+  ctx.moveTo(cx-48,110);
+  ctx.bezierCurveTo(cx-80,120, cx-78,170, cx-50,175);
+  ctx.bezierCurveTo(cx-38,170, cx-38,140, cx-48,110);
+  ctx.fill();
+  // right wing
+  ctx.beginPath();
+  ctx.moveTo(cx+48,110);
+  ctx.bezierCurveTo(cx+80,120, cx+78,170, cx+50,175);
+  ctx.bezierCurveTo(cx+38,170, cx+38,140, cx+48,110);
+  ctx.fill();
+
+  // --- HEAD (big black circle) ---
+  ctx.fillStyle=p.body;
+  ctx.beginPath();ctx.arc(cx,80,52,0,Math.PI*2);ctx.fill();
+
+  // --- WHITE FACE PATCH ---
+  ctx.fillStyle=p.belly;
+  ctx.beginPath();ctx.ellipse(cx,85,32,34,0,0,Math.PI*2);ctx.fill();
+
+  // --- CHEEKS ---
+  ctx.fillStyle='rgba(255,130,160,0.3)';
+  ctx.beginPath();ctx.ellipse(cx-32,90,14,9,0,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.ellipse(cx+32,90,14,9,0,0,Math.PI*2);ctx.fill();
+
+  // --- EYES ---
+  const blink=companionBlink>0;
+  if(!blink){
+    // white of eye
+    ctx.fillStyle='#fff';
+    ctx.beginPath();ctx.ellipse(cx-16,72,10,12,0,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.ellipse(cx+16,72,10,12,0,0,Math.PI*2);ctx.fill();
+    // pupil
+    ctx.fillStyle='#111';
+    ctx.beginPath();ctx.ellipse(cx-15,73,6,8,0,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.ellipse(cx+17,73,6,8,0,0,Math.PI*2);ctx.fill();
+    // shine
+    ctx.fillStyle='#fff';
+    ctx.beginPath();ctx.arc(cx-13,69,2.5,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.arc(cx+19,69,2.5,0,Math.PI*2);ctx.fill();
+  } else {
+    // closed eyes (arcs)
+    ctx.strokeStyle='#111';ctx.lineWidth=2.5;ctx.lineCap='round';
+    ctx.beginPath();ctx.arc(cx-16,74,9,Math.PI+0.3,Math.PI*2-0.3);ctx.stroke();
+    ctx.beginPath();ctx.arc(cx+16,74,9,Math.PI+0.3,Math.PI*2-0.3);ctx.stroke();
+  }
+
+  // --- BEAK ---
+  ctx.fillStyle=p.beak;
+  ctx.beginPath();
+  ctx.moveTo(cx,90);
+  ctx.lineTo(cx-9,100);
+  ctx.lineTo(cx+9,100);
+  ctx.closePath();ctx.fill();
+  // beak fold line
+  ctx.strokeStyle=p.feet==='#ffb347'?'#e09030':'rgba(0,0,0,0.3)';
+  ctx.lineWidth=1.5;ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(cx-7,95);ctx.lineTo(cx+7,95);ctx.stroke();
+
+  // --- TOP HAT ---
+  // brim
+  ctx.fillStyle='#111';
+  ctx.beginPath();ctx.ellipse(cx,32,42,9,0,0,Math.PI*2);ctx.fill();
+  // cylinder body
+  ctx.fillStyle='#1a1a1a';
+  ctx.beginPath();
+  ctx.rect(cx-30,32-46,60,48);
+  ctx.fill();
+  // top of hat
+  ctx.fillStyle='#111';
+  ctx.beginPath();ctx.ellipse(cx,32-46,30,7,0,0,Math.PI*2);ctx.fill();
+  // hat band (colored ribbon)
+  ctx.fillStyle=p.band;
+  ctx.beginPath();ctx.rect(cx-30,32-16,60,12);ctx.fill();
+  // shine on hat
+  ctx.fillStyle='rgba(255,255,255,0.07)';
+  ctx.beginPath();ctx.rect(cx-30,32-46,18,48);ctx.fill();
+
+  // --- MOOD EXTRAS ---
+  if(moodIdx===0){
+    // ZZZ
+    ctx.fillStyle='rgba(160,160,255,0.9)';
+    ['z','z','z'].forEach((z,i)=>{
+      ctx.font=`bold ${14-i*2}px sans-serif`;
+      ctx.textAlign='left';
+      ctx.fillText(z, cx+55+i*10, 50-i*12);
+    });
+  }
+  if(moodIdx>=2){
+    // heart
+    ctx.fillStyle='rgba(255,80,120,0.85)';
+    const hx=cx+62, hy=100;
+    ctx.beginPath();
+    ctx.moveTo(hx,hy+6);
+    ctx.bezierCurveTo(hx,hy+1,hx-9,hy-5,hx-9,hy+2);
+    ctx.bezierCurveTo(hx-9,hy+7,hx,hy+14,hx,hy+14);
+    ctx.bezierCurveTo(hx,hy+14,hx+9,hy+7,hx+9,hy+2);
+    ctx.bezierCurveTo(hx+9,hy-5,hx,hy+1,hx,hy+6);
+    ctx.fill();
+  }
+  if(moodIdx>=3){
+    // sparkles
+    ctx.fillStyle='#f7c948';
+    [[cx-70,60],[cx+68,55],[cx-65,130],[cx+70,125]].forEach(([sx,sy])=>{
+      drawStar(ctx,sx,sy,3,7,4);
+    });
+  }
+  if(moodIdx>=4){
+    // crown on top of hat
+    ctx.fillStyle='#f7c948';
+    const ky=32-46-14;
+    ctx.beginPath();
+    ctx.moveTo(cx-20,ky+12);
+    ctx.lineTo(cx-20,ky);ctx.lineTo(cx-8,ky+8);
+    ctx.lineTo(cx,ky-4);ctx.lineTo(cx+8,ky+8);
+    ctx.lineTo(cx+20,ky);ctx.lineTo(cx+20,ky+12);
+    ctx.closePath();ctx.fill();
+    // crown gems
+    ['#ff6b9d','#7c6ff7','#43e0b2'].forEach((c,i)=>{
+      ctx.fillStyle=c;
+      ctx.beginPath();ctx.arc(cx-10+i*10,ky+4,3,0,Math.PI*2);ctx.fill();
+    });
+  }
+}
+
+function drawStar(ctx,cx,cy,r1,r2,pts){
+  ctx.beginPath();
+  for(let i=0;i<pts*2;i++){
+    const r=i%2===0?r2:r1;
+    const a=i*Math.PI/pts-Math.PI/2;
+    i===0?ctx.moveTo(cx+r*Math.cos(a),cy+r*Math.sin(a)):ctx.lineTo(cx+r*Math.cos(a),cy+r*Math.sin(a));
+  }
+  ctx.closePath();ctx.fill();
+}
+
+function lighten(hex,amt){const r=Math.min(255,parseInt(hex.slice(1,3),16)+amt),g=Math.min(255,parseInt(hex.slice(3,5),16)+amt),b=Math.min(255,parseInt(hex.slice(5,7),16)+amt);return`#${r.toString(16).padStart(2,'0')}${g.toString(16).padStart(2,'0')}${b.toString(16).padStart(2,'0')}`;}
+function darken(hex,amt){return lighten(hex,-amt);}
+
+// Auto blink every 3.5s
+setInterval(()=>{
+  if(currentTool!=='compagnon')return;
+  const doneTasks=tasks.filter(t=>t.done).length;
+  const today=todayStr();
+  const todayHabits=Object.keys(habitChecks[today]||{}).filter(id=>habitChecks[today][id]).length;
+  const moodIdx=Math.min(4,Math.floor((todayHabits+doneTasks/3)/2));
+  companionBlink=1; drawCompanion(moodIdx);
+  setTimeout(()=>{companionBlink=0; drawCompanion(moodIdx);},160);
+},3500);
+// Blink animation — already defined above
+
+// ============================================================
+//  WIKIPEDIA
+// ============================================================
+let wikiHistory = load('wiki-history', []);
+let wikiCache = load('wiki-cache', null);
+
+function saveWikiHistory(){save('wiki-history',wikiHistory);}
+
+async function loadWikipedia(force=false){
+  const today=todayStr();
+  if(!force && wikiCache && wikiCache.date===today){renderWiki(wikiCache);return;}
+  $('wiki-content').innerHTML='<div class="empty"><div class="empty-icon">⏳</div>Chargement...</div>';
+  try {
+    // Fetch French Wikipedia featured article
+    const res = await fetch('https://fr.wikipedia.org/api/rest_v1/page/random/summary');
+    if(!res.ok) throw new Error();
+    const data = await res.json();
+    const article = {
+      title: data.title,
+      extract: data.extract,
+      image: data.thumbnail?.source || null,
+      url: data.content_urls?.desktop?.page || `https://fr.wikipedia.org/wiki/${encodeURIComponent(data.title)}`,
+      date: today
+    };
+    wikiCache = article;
+    save('wiki-cache', wikiCache);
+    // Add to history
+    if(!wikiHistory.find(h=>h.title===article.title)){
+      wikiHistory.unshift({title:article.title, url:article.url, date:today});
+      if(wikiHistory.length>10)wikiHistory.pop();
+      saveWikiHistory();
+    }
+    renderWiki(article);
+    addCompanionXP(5,'📖 Article Wikipédia lu');
+  } catch(e){
+    $('wiki-content').innerHTML='<div class="empty"><div class="empty-icon">📵</div>Pas de connexion<br><span style="font-size:11px;">Connecte-toi pour charger un article</span></div>';
+  }
+}
+
+function renderWiki(article){
+  let html=`<div class="wiki-article">`;
+  if(article.image) html+=`<img class="wiki-img" src="${article.image}" onerror="this.style.display='none'" alt="">`;
+  html+=`<div class="wiki-date-chip">📅 ${article.date}</div>
+    <div class="wiki-title">${article.title}</div>
+    <div class="wiki-extract">${article.extract}</div>
+    <a class="wiki-link" href="${article.url}" target="_blank">📖 Lire l'article complet →</a>
+  </div>`;
+  $('wiki-content').innerHTML=html;
+  // History
+  const hc=$('wiki-history-card'); hc.style.display='block';
+  const hel=$('wiki-history'); hel.innerHTML='';
+  wikiHistory.forEach(h=>{
+    const d=document.createElement('a');
+    d.href=h.url; d.target='_blank';
+    d.style.cssText='display:flex;justify-content:space-between;padding:8px 12px;background:var(--surface2);border-radius:8px;margin-bottom:6px;font-size:13px;text-decoration:none;color:var(--text);border:1px solid var(--border);';
+    d.innerHTML=`<span>${h.title}</span><span style="color:var(--muted);font-size:11px;">${h.date}</span>`;
+    hel.appendChild(d);
+  });
+}
+
+// ============================================================
+//  CARTE DU MONDE
+// ============================================================
+let mapData = load('map-data', {}); // {countryCode: 'visited'|'wishlist'|'lived'}
+let mapMode = 'visited';
+let mapSvgLoaded = false;
+
+function saveMapData(){save('map-data',mapData);}
+
+function setMapMode(mode){
+  mapMode=mode;
+  document.querySelectorAll('.map-mode-btn').forEach(b=>b.classList.remove('active'));
+  $('map-mode-'+mode).classList.add('active');
+}
+
+function updateMapCounters(){
+  $('map-count-visited').textContent=Object.values(mapData).filter(v=>v==='visited').length;
+  $('map-count-wishlist').textContent=Object.values(mapData).filter(v=>v==='wishlist').length;
+  $('map-count-lived').textContent=Object.values(mapData).filter(v=>v==='lived').length;
+}
+
+function initWorldMap(){
+  if(mapSvgLoaded) return;
+  mapSvgLoaded=true;
+
+  // Replace SVG with canvas
+  const wrap=$('world-map-wrap');
+  wrap.innerHTML='<div class="map-tooltip" id="map-tooltip"></div><canvas id="map-canvas" style="width:100%;border-radius:12px;cursor:pointer;display:block;"></canvas>';
+  const canvas=$('map-canvas');
+  const W=800, H=420;
+  canvas.width=W; canvas.height=H;
+
+  // Mercator projection
+  function project(lng,lat){
+    const x=(lng+180)/360*W;
+    const latR=lat*Math.PI/180;
+    const y=(1-(Math.log(Math.tan(Math.PI/4+latR/2))/Math.PI))/2*H;
+    return[x,y];
+  }
+
+  // Country data: [id, name, [[lng,lat],...]] (simplified real shapes)
+  const COUNTRIES=[
+    ['FR','France',[[8.2,48.9],[7.6,47.6],[6.1,46.4],[2.5,43.4],[-1.8,43.4],[-4.6,47.8],[-1.9,47.1],[-2.0,48.6],[2.5,51.0],[6.2,49.5],[8.2,48.9]]],
+    ['ES','Espagne',[[-9.3,43.8],[3.3,43.1],[3.2,39.8],[0.2,38.7],[-0.5,37.3],[-5.3,36.0],[-9.4,38.8],[-9.3,43.8]]],
+    ['DE','Allemagne',[[15.0,50.8],[12.1,50.3],[10.5,47.5],[7.9,47.6],[6.1,50.0],[6.0,51.9],[8.0,55.0],[10.0,55.3],[14.1,53.7],[15.0,50.8]]],
+    ['IT','Italie',[[7.0,44.0],[14.8,40.9],[15.6,38.0],[16.2,37.9],[16.0,39.4],[12.4,37.8],[10.4,43.7],[13.7,45.6],[7.0,44.0]]],
+    ['GB','Royaume-Uni',[[-5.7,50.0],[1.8,51.2],[1.7,52.9],[0.1,60.8],[-1.8,60.5],[-5.0,58.7],[-6.2,56.7],[-3.4,51.3],[-5.7,50.0]]],
+    ['PT','Portugal',[[-9.5,41.9],[-6.2,41.9],[-6.9,39.7],[-7.5,37.0],[-8.9,36.9],[-9.5,38.7],[-9.5,41.9]]],
+    ['PL','Pologne',[[14.1,54.0],[24.1,54.3],[23.5,52.6],[23.9,50.4],[18.6,50.0],[15.0,50.8],[14.1,54.0]]],
+    ['SE','Suède',[[11.3,55.6],[12.3,56.3],[18.9,60.3],[22.2,65.8],[25.5,68.3],[28.4,69.0],[20.1,63.1],[17.8,59.5],[11.3,55.6]]],
+    ['NO','Norvège',[[4.7,58.0],[8.1,58.1],[14.4,65.4],[17.9,68.6],[28.4,71.1],[30.9,70.0],[27.4,71.5],[18.6,69.2],[15.4,66.5],[11.2,63.5],[4.7,58.0]]],
+    ['UA','Ukraine',[[22.1,48.4],[40.1,47.3],[39.3,47.1],[37.3,46.0],[33.4,46.2],[30.8,45.4],[29.9,46.0],[24.8,45.8],[22.4,47.3],[22.1,48.4]]],
+    ['RU','Russie',[[27.4,71.5],[68.0,72.0],[100.0,73.0],[130.0,72.0],[160.0,68.0],[162.0,64.0],[142.0,46.7],[134.0,43.0],[130.0,43.0],[108.0,53.0],[60.0,55.0],[32.0,65.0],[28.4,71.5]]],
+    ['CN','Chine',[[73.7,39.5],[90.0,28.0],[100.0,21.5],[108.0,21.5],[117.0,22.0],[122.0,31.0],[122.0,40.0],[121.0,53.3],[109.0,53.0],[87.0,49.0],[73.7,39.5]]],
+    ['IN','Inde',[[68.2,23.7],[77.8,8.1],[80.3,9.8],[80.3,13.5],[77.5,8.1],[80.1,8.9],[80.3,9.6],[79.9,10.3],[80.3,11.9],[80.3,13.5],[79.9,10.3],[73.1,8.1],[77.5,8.1],[80.3,13.5],[68.2,23.7]]],
+    ['US','États-Unis',[[-124.7,48.5],[-67.0,47.1],[-70.5,42.0],[-80.5,25.0],[-97.0,26.0],[-117.0,32.5],[-124.7,48.5]]],
+    ['CA','Canada',[[-140.0,60.0],[-60.0,47.0],[-52.6,46.5],[-55.7,51.6],[-64.5,60.4],[-64.1,63.4],[-74.0,78.0],[-100.0,73.0],[-140.0,60.0]]],
+    ['MX','Mexique',[[-117.1,32.5],[-86.8,21.5],[-87.7,16.0],[-90.6,16.1],[-92.2,18.0],[-97.1,19.5],[-105.7,21.0],[-117.1,32.5]]],
+    ['BR','Brésil',[[-34.0,-4.5],[-35.1,-8.9],[-39.0,-15.9],[-44.6,-23.2],[-53.4,-33.7],[-70.7,-33.6],[-73.6,-16.3],[-69.5,-10.9],[-72.9,-9.5],[-67.8,-10.7],[-60.2,-5.3],[-51.0,-0.1],[-34.0,-4.5]]],
+    ['AR','Argentine',[[-68.6,-22.1],[-53.6,-22.1],[-53.7,-33.7],[-57.4,-38.0],[-62.3,-51.3],[-68.6,-54.8],[-72.3,-50.7],[-71.0,-42.0],[-68.6,-22.1]]],
+    ['AU','Australie',[[114.0,-22.0],[122.0,-17.5],[131.0,-11.0],[136.0,-12.0],[139.0,-17.0],[148.0,-19.5],[153.0,-28.0],[151.0,-34.0],[140.0,-36.5],[131.5,-31.7],[126.0,-34.0],[114.0,-34.0],[114.0,-22.0]]],
+    ['ZA','Afrique du Sud',[[16.5,-28.8],[17.1,-29.0],[19.0,-34.8],[26.9,-33.6],[33.0,-27.8],[35.3,-23.5],[31.0,-22.3],[30.2,-22.3],[27.3,-22.1],[20.4,-17.9],[16.5,-28.8]]],
+    ['NG','Nigéria',[[3.3,6.4],[14.6,4.2],[14.6,13.1],[10.0,13.5],[3.7,12.7],[2.7,6.4],[3.3,6.4]]],
+    ['EG','Égypte',[[24.7,22.0],[36.9,22.0],[36.9,29.0],[34.2,31.3],[32.1,31.1],[25.0,31.0],[24.7,22.0]]],
+    ['ET','Éthiopie',[[33.0,14.7],[41.7,14.7],[44.9,11.5],[43.1,4.7],[38.4,3.6],[33.9,4.2],[33.0,7.0],[33.0,14.7]]],
+    ['CD','Congo RDC',[[17.8,-12.3],[25.3,-13.4],[30.8,-8.0],[29.5,-3.5],[27.4,2.3],[24.2,2.0],[18.0,3.5],[16.0,2.3],[12.2,-0.3],[12.0,-5.0],[17.8,-12.3]]],
+    ['SA','Arabie Saoudite',[[36.5,29.2],[55.7,22.0],[57.8,20.2],[55.5,16.7],[43.5,17.3],[36.5,21.5],[36.5,29.2]]],
+    ['TR','Turquie',[[26.0,41.9],[44.8,37.3],[42.4,37.1],[35.3,36.2],[26.0,36.7],[26.0,41.9]]],
+    ['IR','Iran',[[44.0,37.0],[60.5,37.4],[63.3,25.4],[57.8,25.2],[56.3,24.0],[44.0,25.2],[44.0,37.0]]],
+    ['ID','Indonésie',[[95.3,5.8],[108.5,7.0],[115.3,-8.5],[116.1,-8.0],[116.5,-5.5],[121.5,-10.3],[130.5,-2.5],[141.0,-8.0],[141.0,-5.5],[135.0,-6.0],[125.0,1.6],[119.5,4.0],[108.0,3.8],[105.0,-6.1],[103.5,1.3],[95.3,5.8]]],
+    ['JP','Japon',[[140.0,44.0],[145.0,44.0],[142.0,40.0],[136.0,34.0],[130.5,31.0],[131.0,33.0],[134.5,35.5],[136.5,36.5],[138.0,38.0],[140.0,40.0],[140.0,44.0]]],
+    ['KR','Corée du Sud',[[128.0,38.6],[129.5,37.7],[129.5,35.5],[127.5,34.0],[126.0,34.2],[126.0,36.5],[128.0,38.6]]],
+    ['PK','Pakistan',[[61.0,35.6],[74.1,37.0],[77.0,35.5],[71.0,29.0],[62.5,26.5],[60.8,29.9],[61.0,35.6]]],
+    ['MA','Maroc',[[-6.0,36.0],[0.0,35.0],[-1.1,30.9],[-5.0,28.0],[-9.0,27.7],[-13.2,28.0],[-13.2,34.0],[-6.0,36.0]]],
+    ['DZ','Algérie',[[3.0,37.0],[8.6,37.2],[8.6,32.9],[8.6,26.5],[5.3,19.9],[3.0,19.9],[-2.2,15.5],[-2.2,20.0],[3.0,37.0]]],
+    ['TZ','Tanzanie',[[29.5,-0.7],[41.9,-1.7],[40.4,-10.4],[36.0,-11.7],[29.5,-11.7],[29.5,-0.7]]],
+    ['KE','Kenya',[[34.0,4.2],[41.9,3.9],[41.8,-1.7],[38.0,-4.7],[34.0,-1.0],[34.0,4.2]]],
+    ['CO','Colombie',[[-77.3,8.7],[-66.9,1.2],[-69.5,0.5],[-72.0,-4.2],[-76.6,-0.3],[-78.9,1.4],[-77.3,8.7]]],
+    ['PE','Pérou',[[-68.7,-14.0],[-69.9,-4.3],[-73.7,-2.1],[-75.3,-8.0],[-80.5,-8.5],[-81.2,-4.3],[-80.3,0.2],[-68.7,-14.0]]],
+    ['CL','Chili',[[-68.6,-22.1],[-66.5,-20.1],[-70.1,-18.3],[-70.5,-30.0],[-71.7,-40.0],[-72.5,-50.0],[-74.7,-52.0],[-68.6,-54.8],[-68.6,-22.1]]],
+    ['VE','Venezuela',[[-73.4,11.8],[-59.8,8.6],[-60.2,5.3],[-67.8,6.0],[-72.9,7.4],[-73.4,11.8]]],
+    ['TH','Thaïlande',[[102.1,13.0],[101.1,12.7],[102.4,6.3],[100.4,5.6],[101.5,10.6],[100.0,14.4],[102.1,13.0]]],
+    ['MM','Myanmar',[[92.4,28.0],[101.2,22.0],[100.0,20.2],[98.1,16.5],[98.6,10.7],[98.0,12.6],[92.4,28.0]]],
+    ['AF','Afghanistan',[[61.0,35.6],[74.1,37.0],[74.9,37.2],[71.5,38.4],[67.9,37.1],[64.5,33.5],[62.0,29.4],[63.3,25.4],[61.0,35.6]]],
+    ['MG','Madagascar',[[44.5,-12.0],[50.5,-15.5],[50.4,-24.9],[44.0,-25.6],[43.3,-17.5],[44.5,-12.0]]],
+    ['SE2','Finlande',[[19.9,60.5],[30.1,65.2],[31.6,70.2],[25.7,71.4],[20.6,69.9],[20.0,63.3],[19.9,60.5]]],
+    ['PH','Philippines',[[118.0,18.5],[122.3,18.2],[122.0,15.0],[124.0,10.5],[125.5,9.5],[126.2,8.2],[123.0,8.0],[121.0,10.3],[119.5,12.0],[118.0,18.5]]],
+  ];
+
+  function drawMap(){
+    const ctx=canvas.getContext('2d');
+    ctx.fillStyle='#0a1628';ctx.fillRect(0,0,W,H);
+    // Ocean grid lines
+    ctx.strokeStyle='rgba(255,255,255,0.04)';ctx.lineWidth=0.5;
+    for(let lng=-180;lng<=180;lng+=30){const[x]=project(lng,0);ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+    for(let lat=-60;lat<=90;lat+=30){const[,y]=project(0,lat);ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+
+    COUNTRIES.forEach(([id,,pts])=>{
+      const status=mapData[id];
+      const fill=status==='visited'?'#43e0b2':status==='wishlist'?'#f7c948':status==='lived'?'#7c6ff7':'#1e3050';
+      const stroke=status?'rgba(255,255,255,0.5)':'rgba(100,160,255,0.25)';
+      ctx.beginPath();
+      pts.forEach(([lng,lat],i)=>{
+        const[x,y]=project(lng,lat);
+        i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+      });
+      ctx.closePath();
+      ctx.fillStyle=fill;ctx.fill();
+      ctx.strokeStyle=stroke;ctx.lineWidth=status?1.5:0.7;ctx.stroke();
+    });
+  }
+
+  drawMap();
+
+  // Click / touch handler
+  function getCountryAt(ex,ey){
+    const rect=canvas.getBoundingClientRect();
+    const scaleX=W/rect.width, scaleY=H/rect.height;
+    const cx=(ex-rect.left)*scaleX, cy=(ey-rect.top)*scaleY;
+    const ctx=canvas.getContext('2d');
+    for(const [id,name,pts] of [...COUNTRIES].reverse()){
+      ctx.beginPath();
+      pts.forEach(([lng,lat],i)=>{const[x,y]=project(lng,lat);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});
+      ctx.closePath();
+      if(ctx.isPointInPath(cx,cy))return{id,name};
+    }
+    return null;
+  }
+
+  canvas.addEventListener('click',e=>{
+    const c=getCountryAt(e.clientX,e.clientY);if(!c)return;
+    if(mapMode==='none')delete mapData[c.id];
+    else mapData[c.id]=mapMode;
+    saveMapData();drawMap();updateMapCounters();
+    const labels={visited:'✅ Visité',wishlist:'⭐ Wishlist',lived:'🏠 Vécu'};
+    $('map-country-info').style.display='block';
+    $('map-country-info').innerHTML=`<strong>${c.name}</strong> — ${mapData[c.id]?labels[mapData[c.id]]:'Non marqué'}`;
+  });
+
+  canvas.addEventListener('mousemove',e=>{
+    const t=$('map-tooltip');
+    const c=getCountryAt(e.clientX,e.clientY);
+    if(c){t.style.display='block';t.textContent=c.name+(mapData[c.id]?' ('+(mapData[c.id]==='visited'?'✅':mapData[c.id]==='wishlist'?'⭐':'🏠')+')':'');
+      const rect=canvas.getBoundingClientRect();t.style.left=(e.clientX-rect.left+12)+'px';t.style.top=(e.clientY-rect.top-28)+'px';}
+    else t.style.display='none';
+  });
+
+  canvas.addEventListener('touchstart',e=>{
+    e.preventDefault();
+    const t=e.touches[0];
+    const c=getCountryAt(t.clientX,t.clientY);if(!c)return;
+    if(mapMode==='none')delete mapData[c.id];
+    else mapData[c.id]=mapMode;
+    saveMapData();drawMap();updateMapCounters();
+    const labels={visited:'✅ Visité',wishlist:'⭐ Wishlist',lived:'🏠 Vécu'};
+    $('map-country-info').style.display='block';
+    $('map-country-info').innerHTML=`<strong>${c.name}</strong> — ${mapData[c.id]?labels[mapData[c.id]]:'Non marqué'}`;
+  },{passive:false});
+
+  updateMapCounters();
+}
+
+// ============================================================
+//  MINI-JEUX
+// ============================================================
+let currentGame='2048';
+function selectGame(g){
+  currentGame=g;
+  $('game-2048').style.display=g==='2048'?'block':'none';
+  $('game-snake').style.display=g==='snake'?'block':'none';
+  $('game-btn-2048').classList.toggle('active',g==='2048');
+  $('game-btn-snake').classList.toggle('active',g==='snake');
+  if(g==='snake')initSnake();
+}
+
+// --- 2048 ---
+let board2048=[], score2048=0, best2048=load('best-2048',0);
+const CELL_COLORS={'2':'#eee4da','4':'#ede0c8','8':'#f2b179','16':'#f59563','32':'#f67c5f','64':'#f65e3b','128':'#edcf72','256':'#edcc61','512':'#edc850','1024':'#edc53f','2048':'#edc22e'};
+
+function init2048(){
+  board2048=Array(4).fill(null).map(()=>Array(4).fill(0));
+  score2048=0; addTile2048(); addTile2048(); render2048();
+}
+
+function addTile2048(){
+  const empty=[];
+  for(let r=0;r<4;r++)for(let c=0;c<4;c++)if(!board2048[r][c])empty.push([r,c]);
+  if(!empty.length)return;
+  const [r,c]=empty[Math.floor(Math.random()*empty.length)];
+  board2048[r][c]=Math.random()<0.9?2:4;
+}
+
+function render2048(){
+  $('score-2048').textContent='Score : '+score2048;
+  $('best-2048').textContent=best2048;
+  const grid=$('grid-2048'); grid.innerHTML='';
+  board2048.forEach(row=>row.forEach(val=>{
+    const cell=document.createElement('div');
+    cell.className='cell-2048';
+    cell.style.background=CELL_COLORS[val]||'#3c3a32';
+    cell.style.color=val<=4?'#776e65':'#f9f6f2';
+    cell.style.fontSize=val>=1000?'16px':val>=100?'18px':'20px';
+    cell.textContent=val||'';
+    grid.appendChild(cell);
+  }));
+}
+
+function move2048(dir){
+  let moved=false;
+  const rotate=m=>m[0].map((_,i)=>m.map(r=>r[i]).reverse());
+  let b=board2048.map(r=>[...r]);
+  const slideRow=row=>{let r=row.filter(x=>x);for(let i=0;i<r.length-1;i++){if(r[i]===r[i+1]){score2048+=r[i]*2;if(score2048>best2048){best2048=score2048;save('best-2048',best2048);}r[i]*=2;r.splice(i+1,1);moved=true;}}while(r.length<4)r.push(0);return r;};
+  if(dir==='left')b=b.map(slideRow);
+  else if(dir==='right')b=b.map(r=>slideRow([...r].reverse()).reverse());
+  else if(dir==='up'){b=rotate(rotate(rotate(b))).map(slideRow);b=rotate(b);}
+  else if(dir==='down'){b=rotate(b).map(slideRow);b=rotate(rotate(rotate(b)));}
+  if(JSON.stringify(b)!==JSON.stringify(board2048))moved=true;
+  board2048=b;
+  if(moved)addTile2048();
+  render2048();
+}
+
+document.addEventListener('keydown',e=>{if(currentGame!=='2048')return;const m={'ArrowLeft':'left','ArrowRight':'right','ArrowUp':'up','ArrowDown':'down'};if(m[e.key]){e.preventDefault();move2048(m[e.key]);}});
+
+// Touch swipe for 2048
+let touch2048Start={x:0,y:0};
+document.addEventListener('touchstart',e=>{if(currentGame!=='2048')return;touch2048Start={x:e.touches[0].clientX,y:e.touches[0].clientY};},{passive:true});
+document.addEventListener('touchend',e=>{
+  if(currentGame!=='2048')return;
+  const dx=e.changedTouches[0].clientX-touch2048Start.x;
+  const dy=e.changedTouches[0].clientY-touch2048Start.y;
+  if(Math.abs(dx)<20&&Math.abs(dy)<20)return;
+  if(Math.abs(dx)>Math.abs(dy))move2048(dx>0?'right':'left');
+  else move2048(dy>0?'down':'up');
+},{passive:true});
+
+// --- SNAKE ---
+let snakeCtx, snakeInterval=null, snakeBody=[], snakeDx=1, snakeDy=0, snakeFood={x:10,y:10}, snakeScore=0, snakeBest=load('best-snake',0), snakeAlive=false;
+const SSIZE=20, SCOLS=15, SROWS=15;
+
+function initSnake(){
+  const canvas=$('snake-canvas'); canvas.width=SCOLS*SSIZE; canvas.height=SROWS*SSIZE;
+  snakeCtx=canvas.getContext('2d');
+  snakeBody=[{x:7,y:7},{x:6,y:7},{x:5,y:7}];
+  snakeDx=1;snakeDy=0;snakeScore=0;snakeAlive=true;
+  $('snake-over').style.display='none';
+  placeSnakeFood();
+  if(snakeInterval)clearInterval(snakeInterval);
+  snakeInterval=setInterval(snakeTick,130);
+}
+
+function placeSnakeFood(){snakeFood={x:Math.floor(Math.random()*SCOLS),y:Math.floor(Math.random()*SROWS)};}
+
+function snakeDir(dx,dy){
+  if(dx===1&&snakeDx===-1||dx===-1&&snakeDx===1)return;
+  if(dy===1&&snakeDy===-1||dy===-1&&snakeDy===1)return;
+  snakeDx=dx;snakeDy=dy;
+}
+
+function snakeTick(){
+  if(!snakeAlive)return;
+  const head={x:snakeBody[0].x+snakeDx,y:snakeBody[0].y+snakeDy};
+  if(head.x<0||head.x>=SCOLS||head.y<0||head.y>=SROWS||snakeBody.some(s=>s.x===head.x&&s.y===head.y)){
+    snakeAlive=false;clearInterval(snakeInterval);
+    if(snakeScore>snakeBest){snakeBest=snakeScore;save('best-snake',snakeBest);}
+    $('snake-final-score').textContent=snakeScore;$('snake-best').textContent=snakeBest;
+    $('snake-over').style.display='block'; return;
+  }
+  snakeBody.unshift(head);
+  if(head.x===snakeFood.x&&head.y===snakeFood.y){snakeScore+=10;placeSnakeFood();}
+  else snakeBody.pop();
+  $('score-snake').textContent='Score : '+snakeScore;
+  drawSnake();
+}
+
+function drawSnake(){
+  const ctx=snakeCtx;
+  ctx.fillStyle='#0d0d14';ctx.fillRect(0,0,SCOLS*SSIZE,SROWS*SSIZE);
+  // Grid
+  ctx.strokeStyle='rgba(255,255,255,0.03)';ctx.lineWidth=0.5;
+  for(let x=0;x<=SCOLS;x++){ctx.beginPath();ctx.moveTo(x*SSIZE,0);ctx.lineTo(x*SSIZE,SROWS*SSIZE);ctx.stroke();}
+  for(let y=0;y<=SROWS;y++){ctx.beginPath();ctx.moveTo(0,y*SSIZE);ctx.lineTo(SCOLS*SSIZE,y*SSIZE);ctx.stroke();}
+  // Food
+  ctx.fillStyle='#ff6b9d';ctx.beginPath();ctx.arc(snakeFood.x*SSIZE+SSIZE/2,snakeFood.y*SSIZE+SSIZE/2,SSIZE/2-2,0,Math.PI*2);ctx.fill();
+  // Snake
+  snakeBody.forEach((s,i)=>{
+    ctx.fillStyle=i===0?'#7c6ff7':'#43e0b2';
+    ctx.beginPath();ctx.roundRect(s.x*SSIZE+1,s.y*SSIZE+1,SSIZE-2,SSIZE-2,4);ctx.fill();
+  });
+}
+
+// ============================================================
+//  GALERIE PHOTOS
+// ============================================================
+let galleryDB=null, galleryPhotos=load('gallery-meta',[]), galleryLightboxIdx=-1;
+
+function initGalleryDB(){
+  return new Promise((res,rej)=>{
+    const req=indexedDB.open('bat-gallery',1);
+    req.onupgradeneeded=e=>{const db=e.target.result;if(!db.objectStoreNames.contains('photos'))db.createObjectStore('photos',{keyPath:'id'});};
+    req.onsuccess=e=>{galleryDB=e.target.result;res();};
+    req.onerror=()=>rej();
+  });
+}
+
+function importPhotos(event){
+  const files=Array.from(event.target.files);if(!files.length)return;
+  files.forEach(file=>{
+    const id=Date.now()+Math.random();
+    const reader=new FileReader();
+    reader.onload=e=>{
+      const tx=galleryDB.transaction('photos','readwrite');
+      tx.objectStore('photos').put({id,data:e.target.result,type:file.type});
+      tx.oncomplete=()=>{
+        galleryPhotos.push({id,note:'',date:todayStr()});
+        save('gallery-meta',galleryPhotos);
+        renderGallery();
+      };
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function renderGallery(){
+  const grid=$('gallery-grid');grid.innerHTML='';
+  if(!galleryPhotos.length){grid.innerHTML='<div class="empty" style="grid-column:span 2;"><div class="empty-icon">📸</div>Aucune photo</div>';return;}
+  galleryPhotos.forEach((p,i)=>{
+    const item=document.createElement('div');item.className='gallery-item';
+    const img=document.createElement('img');
+    img.loading='lazy';
+    // Load from IndexedDB
+    if(galleryDB){const tx=galleryDB.transaction('photos','readonly');const req=tx.objectStore('photos').get(p.id);req.onsuccess=e=>{if(e.target.result)img.src=e.target.result.data;};}
+    const note=document.createElement('div');note.className='gi-note';note.textContent=p.note||'Aucune note';
+    const del=document.createElement('button');del.className='gi-del';del.textContent='×';del.onclick=e=>{e.stopPropagation();deletePhoto(i);};
+    item.onclick=()=>openLightbox(i);
+    item.appendChild(img);item.appendChild(note);item.appendChild(del);
+    grid.appendChild(item);
+  });
+}
+
+function openLightbox(idx){
+  galleryLightboxIdx=idx;
+  const p=galleryPhotos[idx];
+  const lb=$('gallery-lightbox');lb.classList.add('active');
+  $('lb-note').textContent=p.note||'Aucune note';
+  if(galleryDB){const tx=galleryDB.transaction('photos','readonly');const req=tx.objectStore('photos').get(p.id);req.onsuccess=e=>{if(e.target.result)$('lb-img').src=e.target.result.data;};}
+}
+
+function closeLightbox(){$('gallery-lightbox').classList.remove('active');}
+
+function editPhotoNote(){
+  const note=prompt('Note :',galleryPhotos[galleryLightboxIdx].note||'');
+  if(note===null)return;
+  galleryPhotos[galleryLightboxIdx].note=note;
+  save('gallery-meta',galleryPhotos);
+  $('lb-note').textContent=note||'Aucune note';
+  renderGallery();
+}
+
+function deleteCurrentPhoto(){
+  if(!confirm('Supprimer cette photo ?'))return;
+  deletePhoto(galleryLightboxIdx);
+  closeLightbox();
+}
+
+function deletePhoto(idx){
+  const id=galleryPhotos[idx].id;
+  if(galleryDB){const tx=galleryDB.transaction('photos','readwrite');tx.objectStore('photos').delete(id);}
+  galleryPhotos.splice(idx,1);
+  save('gallery-meta',galleryPhotos);
+  renderGallery();
+}
+
+// ============================================================
+//  CITATIONS
+// ============================================================
+const QUOTES=[
+  {text:"Le succès c'est d'aller d'échec en échec sans perdre son enthousiasme.",author:'Winston Churchill',cat:'motivation'},
+  {text:"La vie est ce qui arrive quand vous êtes occupé à faire d'autres projets.",author:'John Lennon',cat:'vie'},
+  {text:"Sois le changement que tu veux voir dans le monde.",author:'Gandhi',cat:'inspiration'},
+  {text:"L'imagination est plus importante que la connaissance.",author:'Albert Einstein',cat:'sagesse'},
+  {text:"Il n'y a qu'une façon d'éviter les critiques : ne rien faire, ne rien dire et n'être rien.",author:'Aristote',cat:'sagesse'},
+  {text:"Le bonheur n'est pas quelque chose de fait. Il vient de vos propres actions.",author:'Dalaï Lama',cat:'bonheur'},
+  {text:"Tout ce dont vous avez besoin est déjà en vous.",author:'Bouddha',cat:'inspiration'},
+  {text:"La seule limite à notre épanouissement de demain sera nos doutes d'aujourd'hui.",author:'Franklin D. Roosevelt',cat:'motivation'},
+  {text:"Commencez là où vous êtes. Utilisez ce que vous avez. Faites ce que vous pouvez.",author:'Arthur Ashe',cat:'motivation'},
+  {text:"Ce n'est pas la montagne que nous conquérons, mais nous-mêmes.",author:'Edmund Hillary',cat:'défi'},
+  {text:"Chaque jour est une nouvelle chance de changer ta vie.",author:'Anonyme',cat:'motivation'},
+  {text:"La façon dont tu parles de toi-même affecte ton destin.",author:'Anonyme',cat:'mindset'},
+  {text:"Un voyage de mille lieues commence toujours par un premier pas.",author:'Lao Tseu',cat:'sagesse'},
+  {text:"Crois en toi-même et tout devient possible.",author:'Anonyme',cat:'confiance'},
+  {text:"Les obstacles ne peuvent pas m'arrêter. Chaque obstacle cède devant une détermination sans faille.",author:'Léonard de Vinci',cat:'défi'},
+  {text:"Le moment présent sera toujours le début du reste de ta vie.",author:'Anonyme',cat:'vie'},
+  {text:"Fais de chaque jour ton chef-d'œuvre.",author:'John Wooden',cat:'motivation'},
+  {text:"La discipline est le pont entre les objectifs et la réalisation.",author:'Jim Rohn',cat:'discipline'},
+  {text:"Rêve grand, commence petit, agis maintenant.",author:'Robin Sharma',cat:'action'},
+  {text:"Le seul endroit où le succès vient avant le travail, c'est dans le dictionnaire.",author:'Vidal Sassoon',cat:'travail'},
+  {text:"Ton attitude, pas ton aptitude, détermine ton altitude.",author:'Zig Ziglar',cat:'mindset'},
+  {text:"Chaque expert a un jour été un débutant.",author:'Helen Hayes',cat:'apprentissage'},
+  {text:"La créativité, c'est l'intelligence qui s'amuse.",author:'Albert Einstein',cat:'créativité'},
+  {text:"Mieux vaut allumer une bougie que maudire l'obscurité.",author:'Proverbe chinois',cat:'sagesse'},
+];
+const QUOTE_CATS=['tout','motivation','vie','inspiration','sagesse','bonheur','défi','mindset','confiance','discipline','action','travail','apprentissage','créativité'];
+let currentQuoteCat='tout', currentQuoteIdx=0;
+let quoteFavs=load('quote-favs',[]);
+
+function saveQuoteFavs(){save('quote-favs',quoteFavs);}
+
+function nextQuote(){
+  const pool=currentQuoteCat==='tout'?QUOTES:QUOTES.filter(q=>q.cat===currentQuoteCat);
+  if(!pool.length)return;
+  currentQuoteIdx=Math.floor(Math.random()*pool.length);
+  const q=pool[currentQuoteIdx];
+  $('quote-text').textContent=`« ${q.text} »`;
+  $('quote-author').textContent=`— ${q.author}`;
+  const isFav=quoteFavs.some(f=>f.text===q.text);
+  $('quote-fav-btn').textContent=isFav?'❤️':'🤍';
+}
+
+function toggleQuoteFav(){
+  const pool=currentQuoteCat==='tout'?QUOTES:QUOTES.filter(q=>q.cat===currentQuoteCat);
+  const q=pool[currentQuoteIdx];if(!q)return;
+  const idx=quoteFavs.findIndex(f=>f.text===q.text);
+  if(idx>=0){quoteFavs.splice(idx,1);$('quote-fav-btn').textContent='🤍';}
+  else{quoteFavs.push(q);$('quote-fav-btn').textContent='❤️';}
+  saveQuoteFavs(); renderQuoteFavs();
+}
+
+function renderQuoteCats(){
+  const el=$('quote-cats');el.innerHTML='';
+  QUOTE_CATS.forEach(c=>{
+    const btn=document.createElement('button');btn.className='quote-cat-btn'+(c===currentQuoteCat?' active':'');
+    btn.textContent=c;btn.onclick=()=>{currentQuoteCat=c;document.querySelectorAll('.quote-cat-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');nextQuote();};
+    el.appendChild(btn);
+  });
+}
+
+function renderQuoteFavs(){
+  const el=$('quote-favs');el.innerHTML='';
+  if(!quoteFavs.length){el.innerHTML='<div class="empty" style="padding:10px;">Aucun favori</div>';return;}
+  quoteFavs.forEach((q,i)=>{
+    const div=document.createElement('div');div.className='quote-fav-item';
+    div.innerHTML=`<div style="flex:1;"><div style="font-style:italic;">"${q.text}"</div><div style="color:var(--accent);font-size:11px;margin-top:3px;">— ${q.author}</div></div><button style="background:none;border:none;color:var(--danger);cursor:pointer;" onclick="quoteFavs.splice(${i},1);saveQuoteFavs();renderQuoteFavs();">×</button>`;
+    el.appendChild(div);
+  });
+}
+
+// ============================================================
+//  QR CODE
+// ============================================================
+function generateQR(){
+  const text=$('qr-input').value.trim();
+  if(!text){$('qr-display').style.display='none';$('qr-download-btn').style.display='none';return;}
+  $('qr-display').style.display='flex';$('qr-download-btn').style.display='block';
+  const canvas=$('qr-canvas');
+  const size=200; canvas.width=size; canvas.height=size;
+  // Simple QR code using a basic matrix pattern (visual representation)
+  drawSimpleQR(canvas, text, size);
+}
+
+function drawSimpleQR(canvas, text, size){
+  const ctx=canvas.getContext('2d');
+  ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,size,size);
+  ctx.fillStyle='#000000';
+  // Use a deterministic hash to create a pattern
+  const n=21; const cs=Math.floor(size/n);
+  const hash=simpleHash(text);
+  // Fixed finder patterns
+  const fixed=[];
+  // Top-left finder
+  for(let r=0;r<7;r++)for(let c=0;c<7;c++){
+    if(r===0||r===6||c===0||c===6||(r>=2&&r<=4&&c>=2&&c<=4))fixed.push([r,c]);
+  }
+  // Top-right finder
+  for(let r=0;r<7;r++)for(let c=n-7;c<n;c++){
+    const cc=c-(n-7);
+    if(r===0||r===6||cc===0||cc===6||(r>=2&&r<=4&&cc>=2&&cc<=4))fixed.push([r,c]);
+  }
+  // Bottom-left finder
+  for(let r=n-7;r<n;r++)for(let c=0;c<7;c++){
+    const rr=r-(n-7);
+    if(rr===0||rr===6||c===0||c===6||(rr>=2&&rr<=4&&c>=2&&c<=4))fixed.push([r,c]);
+  }
+  const fixedSet=new Set(fixed.map(([r,c])=>r+','+c));
+  // Data modules
+  for(let r=0;r<n;r++)for(let c=0;c<n;c++){
+    let dark=false;
+    if(fixedSet.has(r+','+c))dark=true;
+    else{const bit=(hash[r*n+c]||0)^((r+c)%2);dark=bit===1;}
+    if(dark){ctx.fillStyle='#000000';ctx.fillRect(c*cs,r*cs,cs,cs);}
+  }
+  // White separator
+  ctx.fillStyle='#ffffff';
+  [[0,7,7,1],[0,7,1,7],[n-7,0,7,1],[n-7,0,1,7],[0,n-7,1,7],[6,n-7,1,7]].forEach(([r,c,h,w])=>ctx.fillRect(c*cs,r*cs,w*cs,h*cs));
+}
+
+function simpleHash(str){
+  const arr=new Uint8Array(441);
+  for(let i=0;i<str.length;i++){const c=str.charCodeAt(i);for(let j=0;j<441;j++)arr[j]^=(c*(j+1)*17)&0xff;}
+  return arr.map(v=>v>127?1:0);
+}
+
+function qrPreset(val){$('qr-input').value=val;$('qr-input').focus();generateQR();}
+
+function downloadQR(){
+  const canvas=$('qr-canvas');
+  const a=document.createElement('a');a.download='qrcode.png';a.href=canvas.toDataURL();a.click();
+}
+
+// ============================================================
+//  CONVERTISSEUR
+// ============================================================
+const CONV_CATS=[
+  {id:'longueur',name:'📏 Longueur',units:[
+    {id:'km',name:'Kilomètres'},{id:'m',name:'Mètres'},{id:'cm',name:'Centimètres'},{id:'mm',name:'Millimètres'},
+    {id:'mi',name:'Miles'},{id:'yd',name:'Yards'},{id:'ft',name:'Pieds'},{id:'in',name:'Pouces'},
+  ],toBase:{km:1000,m:1,cm:0.01,mm:0.001,mi:1609.344,yd:0.9144,ft:0.3048,in:0.0254}},
+  {id:'poids',name:'⚖️ Poids',units:[
+    {id:'kg',name:'Kilogrammes'},{id:'g',name:'Grammes'},{id:'mg',name:'Milligrammes'},
+    {id:'lb',name:'Livres (lbs)'},{id:'oz',name:'Onces'},{id:'t',name:'Tonnes'},
+  ],toBase:{kg:1,g:0.001,mg:0.000001,lb:0.453592,oz:0.0283495,t:1000}},
+  {id:'temp',name:'🌡️ Température',units:[
+    {id:'c',name:'Celsius'},{id:'f',name:'Fahrenheit'},{id:'k',name:'Kelvin'},
+  ],special:true},
+  {id:'volume',name:'🧪 Volume',units:[
+    {id:'l',name:'Litres'},{id:'ml',name:'Millilitres'},{id:'cl',name:'Centilitres'},
+    {id:'gal',name:'Gallons (US)'},{id:'qt',name:'Quarts'},{id:'pt',name:'Pintes'},{id:'cup',name:'Tasses'},{id:'floz',name:'Fl. oz'},
+  ],toBase:{l:1,ml:0.001,cl:0.01,gal:3.78541,qt:0.946353,pt:0.473176,cup:0.236588,floz:0.0295735}},
+  {id:'vitesse',name:'💨 Vitesse',units:[
+    {id:'kmh',name:'km/h'},{id:'ms',name:'m/s'},{id:'mph',name:'mph'},{id:'kn',name:'Nœuds'},
+  ],toBase:{kmh:1,ms:3.6,mph:1.60934,kn:1.852}},
+  {id:'surface',name:'📐 Surface',units:[
+    {id:'m2',name:'m²'},{id:'km2',name:'km²'},{id:'ha',name:'Hectares'},
+    {id:'ft2',name:'ft²'},{id:'ac',name:'Acres'},
+  ],toBase:{m2:1,km2:1000000,ha:10000,ft2:0.092903,ac:4046.86}},
+  {id:'monnaie',name:'💶 Monnaie (approx.)',units:[
+    {id:'eur',name:'Euro €'},{id:'usd',name:'Dollar $ US'},{id:'gbp',name:'Livre £'},{id:'jpy',name:'Yen ¥'},{id:'cad',name:'Dollar CA'},{id:'chf',name:'Franc CHF'},
+  ],toBase:{eur:1,usd:0.92,gbp:1.17,jpy:0.0062,cad:0.68,chf:1.05}},
+];
+let convCat=CONV_CATS[0], convFrom=CONV_CATS[0].units[0], convTo=CONV_CATS[0].units[1];
+
+function renderConvTabs(){
+  const el=$('conv-tabs');el.innerHTML='';
+  CONV_CATS.forEach(cat=>{
+    const btn=document.createElement('button');btn.className='conv-tab'+(cat.id===convCat.id?' active':'');
+    btn.textContent=cat.name;
+    btn.onclick=()=>{convCat=cat;convFrom=cat.units[0];convTo=cat.units[1];renderConvTabs();renderConvContent();};
+    el.appendChild(btn);
+  });
+}
+
+function renderConvContent(){
+  const el=$('conv-content');
+  el.innerHTML=`
+    <div class="conv-row">
+      <input type="number" id="conv-val-from" placeholder="Valeur..." oninput="convertVal()" value="1">
+      <select id="conv-from" onchange="convFrom=convCat.units.find(u=>u.id===this.value);convertVal()">
+        ${convCat.units.map(u=>`<option value="${u.id}" ${u.id===convFrom.id?'selected':''}>${u.name}</option>`).join('')}
+      </select>
+    </div>
+    <div class="conv-arrow">⇅</div>
+    <div class="conv-row">
+      <input type="number" id="conv-val-to" placeholder="Résultat..." readonly>
+      <select id="conv-to" onchange="convTo=convCat.units.find(u=>u.id===this.value);convertVal()">
+        ${convCat.units.map(u=>`<option value="${u.id}" ${u.id===convTo.id?'selected':''}>${u.name}</option>`).join('')}
+      </select>
+    </div>`;
+  convertVal();
+}
+
+function convertTemp(val,from,to){
+  let c=val;
+  if(from==='f')c=(val-32)*5/9;
+  else if(from==='k')c=val-273.15;
+  if(to==='c')return c;
+  if(to==='f')return c*9/5+32;
+  if(to==='k')return c+273.15;
+  return val;
+}
+
+function convertVal(){
+  const input=$('conv-val-from');const output=$('conv-val-to');if(!input||!output)return;
+  const val=parseFloat(input.value);
+  if(isNaN(val)){output.value='';return;}
+  const from=$('conv-from')?.value||convFrom.id;
+  const to=$('conv-to')?.value||convTo.id;
+  let result;
+  if(convCat.special){result=convertTemp(val,from,to);}
+  else{const base=val*(convCat.toBase[from]||1);result=base/(convCat.toBase[to]||1);}
+  output.value=parseFloat(result.toFixed(8));
+}
+
+// ============================================================
+//  PENGUIN ANIMATIONS
+// ============================================================
+function penguinCelebrate(){
+  if(currentTool!=='compagnon')return;
+  const canvas=$('companion-canvas');if(!canvas)return;
+  let frame=0;
+  const anim=setInterval(()=>{
+    const moodIdx=4;
+    const ctx=canvas.getContext('2d');
+    // bounce effect
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.save();
+    const bounce=Math.sin(frame*0.5)*8;
+    ctx.translate(0,bounce);
+    drawCompanion(moodIdx);
+    ctx.restore();
+    frame++;
+    if(frame>20)clearInterval(anim);
+  },50);
+}
+
+// ============================================================
+//  POMODORO
+// ============================================================
+let pomoDurs={work:25,short:5,long:15};
+let pomoMode='work';
+let pomoSecs=25*60;
+let pomoRunning=false;
+let pomoInterval=null;
+let pomoSessionsToday=load('pomo-today',{date:'',count:0});
+let pomoSessionsTotal=load('pomo-total',0);
+
+function pomoUpdateDurs(){
+  pomoDurs.work=parseInt($('pomo-dur-work').value)||25;
+  pomoDurs.short=parseInt($('pomo-dur-short').value)||5;
+  pomoDurs.long=parseInt($('pomo-dur-long').value)||15;
+  if(!pomoRunning)pomoReset();
+}
+
+function setPomoMode(mode){
+  pomoMode=mode;
+  ['work','short','long'].forEach(m=>{
+    $('pomo-btn-'+m).classList.toggle('active',m===mode);
+    const colors={work:'#ff6b9d',short:'#43e0b2',long:'#7c6ff7'};
+    if(m===mode)$('pomo-btn-'+m).style.background=colors[m];
+    else $('pomo-btn-'+m).style.background='';
+  });
+  pomoReset();
+}
+
+function pomoReset(){
+  clearInterval(pomoInterval);pomoRunning=false;
+  const mins={work:pomoDurs.work,short:pomoDurs.short,long:pomoDurs.long}[pomoMode];
+  pomoSecs=mins*60;
+  $('pomo-start-btn').textContent='▶ Démarrer';
+  $('pomo-label').textContent={work:'Travail',short:'Courte pause',long:'Longue pause'}[pomoMode];
+  updatePomoDisplay();drawPomoRing(1);
+}
+
+function pomoToggle(){
+  if(pomoRunning){clearInterval(pomoInterval);pomoRunning=false;$('pomo-start-btn').textContent='▶ Reprendre';}
+  else{
+    pomoRunning=true;$('pomo-start-btn').textContent='⏸ Pause';
+    pomoInterval=setInterval(()=>{
+      pomoSecs--;updatePomoDisplay();
+      const total={work:pomoDurs.work,short:pomoDurs.short,long:pomoDurs.long}[pomoMode]*60;
+      drawPomoRing(pomoSecs/total);
+      if(pomoSecs<=0){
+        clearInterval(pomoInterval);pomoRunning=false;
+        if(pomoMode==='work'){
+          // Count session
+          const today=todayStr();
+          if(pomoSessionsToday.date!==today)pomoSessionsToday={date:today,count:0};
+          pomoSessionsToday.count++;pomoSessionsTotal++;
+          save('pomo-today',pomoSessionsToday);save('pomo-total',pomoSessionsTotal);
+          updatePomoStats();addCompanionXP(15,'🍅 Session Pomodoro terminée !');
+          showToast('🍅 Session terminée ! Prends une pause.');
+          if(Notification.permission==='granted')new Notification('🍅 Pomodoro terminé !',{body:'Super travail ! Temps de souffler.'});
+        }
+        pomoReset();
+      }
+    },1000);
+  }
+}
+
+function updatePomoDisplay(){
+  const m=Math.floor(pomoSecs/60),s=pomoSecs%60;
+  $('pomo-time').textContent=`${pad(m)}:${pad(s)}`;
+  updatePomoStats();
+}
+
+function updatePomoStats(){
+  const today=todayStr();
+  if(pomoSessionsToday.date!==today)pomoSessionsToday={date:today,count:0};
+  $('pomo-sessions-today').textContent=pomoSessionsToday.count;
+  $('pomo-sessions-total').textContent=pomoSessionsTotal;
+  // dots
+  const dots=$('pomo-dots');dots.innerHTML='';
+  for(let i=0;i<4;i++){
+    const d=document.createElement('div');
+    d.className='pomo-dot'+(i<pomoSessionsToday.count%4?' done':'');
+    dots.appendChild(d);
+  }
+}
+
+function drawPomoRing(pct){
+  const canvas=$('pomo-canvas');if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  const cx=100,cy=100,r=88;
+  ctx.clearRect(0,0,200,200);
+  // bg ring
+  ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);
+  ctx.strokeStyle='rgba(255,255,255,0.08)';ctx.lineWidth=12;ctx.stroke();
+  // progress
+  const colors={work:'#ff6b9d',short:'#43e0b2',long:'#7c6ff7'};
+  const col=colors[pomoMode];
+  ctx.beginPath();ctx.arc(cx,cy,r,-Math.PI/2,-Math.PI/2+pct*Math.PI*2);
+  ctx.strokeStyle=col;ctx.lineWidth=12;ctx.lineCap='round';ctx.stroke();
+  // glow
+  ctx.shadowColor=col;ctx.shadowBlur=15;
+  ctx.beginPath();ctx.arc(cx,cy,r,-Math.PI/2,-Math.PI/2+pct*Math.PI*2);
+  ctx.strokeStyle=col+'88';ctx.lineWidth=4;ctx.stroke();
+  ctx.shadowBlur=0;
+}
+
+// ============================================================
+//  PIXEL ART
+// ============================================================
+let pixelSize=16,pixelColor='#7c6ff7',pixelEraser=false;
+let pixelGrid=[],pixelDrawing=false;
+let pixelSaves=load('pixel-saves',[]);
+
+const PIXEL_PALETTE=['#000000','#ffffff','#ff5e5e','#ff9f43','#f7c948','#43e0b2','#5ac8ff','#7c6ff7','#ff6b9d','#1a1a2e','#2a2a4a','#8b8b8b','#c8c8c8','#ff8c5a','#b06ef7','#3d5a80'];
+
+function initPixelGrid(size){
+  pixelSize=size||pixelSize;
+  pixelGrid=Array(pixelSize).fill(null).map(()=>Array(pixelSize).fill('#ffffff'));
+  ['8','16','32'].forEach(s=>{const b=$('px-size-'+s);if(b)b.classList.toggle('active',parseInt(s)===pixelSize);});
+  renderPixelCanvas();
+}
+
+function renderPixelCanvas(){
+  const wrap=$('pixel-canvas-wrap');if(!wrap)return;
+  wrap.innerHTML='';
+  const cellSize=Math.floor(Math.min(300,wrap.parentElement.clientWidth-40)/pixelSize);
+  const canvas=document.createElement('canvas');
+  canvas.width=pixelSize*cellSize;canvas.height=pixelSize*cellSize;
+  canvas.style.imageRendering='pixelated';canvas.style.cursor='crosshair';
+  wrap.appendChild(canvas);
+  renderPixelToCanvas(canvas,cellSize);
+  // Events
+  function getCell(e){
+    const rect=canvas.getBoundingClientRect();
+    const scaleX=canvas.width/rect.width,scaleY=canvas.height/rect.height;
+    const touch=e.touches?e.touches[0]:e;
+    const x=Math.floor((touch.clientX-rect.left)*scaleX/cellSize);
+    const y=Math.floor((touch.clientY-rect.top)*scaleY/cellSize);
+    return{x,y};
+  }
+  function paint(e){
+    const{x,y}=getCell(e);
+    if(x<0||x>=pixelSize||y<0||y>=pixelSize)return;
+    pixelGrid[y][x]=pixelEraser?'#ffffff':pixelColor;
+    const ctx=canvas.getContext('2d');
+    ctx.fillStyle=pixelGrid[y][x];ctx.fillRect(x*cellSize,y*cellSize,cellSize,cellSize);
+    ctx.strokeStyle='rgba(0,0,0,0.1)';ctx.lineWidth=0.5;ctx.strokeRect(x*cellSize,y*cellSize,cellSize,cellSize);
+  }
+  canvas.addEventListener('mousedown',e=>{pixelDrawing=true;paint(e);});
+  canvas.addEventListener('mousemove',e=>{if(pixelDrawing)paint(e);});
+  canvas.addEventListener('mouseup',()=>pixelDrawing=false);
+  canvas.addEventListener('touchstart',e=>{e.preventDefault();pixelDrawing=true;paint(e);},{passive:false});
+  canvas.addEventListener('touchmove',e=>{e.preventDefault();if(pixelDrawing)paint(e);},{passive:false});
+  canvas.addEventListener('touchend',()=>pixelDrawing=false);
+}
+
+function renderPixelToCanvas(canvas,cellSize){
+  const ctx=canvas.getContext('2d');
+  const cs=cellSize||Math.floor(canvas.width/pixelSize);
+  for(let y=0;y<pixelSize;y++)for(let x=0;x<pixelSize;x++){
+    ctx.fillStyle=pixelGrid[y][x]||'#ffffff';ctx.fillRect(x*cs,y*cs,cs,cs);
+    ctx.strokeStyle='rgba(0,0,0,0.08)';ctx.lineWidth=0.5;ctx.strokeRect(x*cs,y*cs,cs,cs);
+  }
+}
+
+function setPixelColor(c){pixelColor=c;pixelEraser=false;$('pixel-current-color').style.background=c;$('pixel-tool-label').textContent='✏️ Dessin';document.querySelectorAll('.pixel-color-chip').forEach(el=>el.classList.toggle('active',el.dataset.color===c));}
+function togglePixelEraser(){pixelEraser=!pixelEraser;$('pixel-tool-label').textContent=pixelEraser?'🧹 Gomme':'✏️ Dessin';}
+function pixelClear(){pixelGrid=pixelGrid.map(row=>row.map(()=>'#ffffff'));renderPixelCanvas();}
+function pixelFill(){pixelGrid=pixelGrid.map(row=>row.map(()=>pixelColor));renderPixelCanvas();}
+
+function getPixelDataURL(){
+  const c=document.createElement('canvas');c.width=pixelSize;c.height=pixelSize;
+  renderPixelToCanvas(c,1);return c.toDataURL();
+}
+
+function savePixelArt(){
+  const url=getPixelDataURL();
+  pixelSaves.unshift({url,size:pixelSize,date:todayStr()});
+  if(pixelSaves.length>20)pixelSaves.pop();
+  save('pixel-saves',pixelSaves);renderPixelSaves();showToast('🎨 Pixel art sauvegardé !');
+}
+
+function downloadPixelArt(){
+  const c=document.createElement('canvas');c.width=pixelSize*8;c.height=pixelSize*8;
+  renderPixelToCanvas(c,8);const a=document.createElement('a');a.download='pixel-art.png';a.href=c.toDataURL();a.click();
+}
+
+function renderPixelSaves(){
+  const el=$('pixel-saves');if(!el)return;el.innerHTML='';
+  if(!pixelSaves.length){el.innerHTML='<span style="font-size:12px;color:var(--muted);">Aucune création</span>';return;}
+  pixelSaves.forEach((s,i)=>{
+    const img=document.createElement('img');img.src=s.url;img.className='pixel-save-thumb';
+    img.title=s.date;img.style.imageRendering='pixelated';
+    img.onclick=()=>{pixelSize=s.size||16;pixelGrid=s.grid||Array(pixelSize).fill(null).map(()=>Array(pixelSize).fill('#ffffff'));renderPixelCanvas();};
+    el.appendChild(img);
+  });
+}
+
+function renderPixelPalette(){
+  const el=$('pixel-palette');if(!el)return;
+  PIXEL_PALETTE.forEach(c=>{
+    const d=document.createElement('div');d.className='pixel-color-chip'+(c===pixelColor?' active':'');
+    d.style.background=c;d.dataset.color=c;d.onclick=()=>setPixelColor(c);
+    el.appendChild(d);
+  });
+}
+
+// ============================================================
+//  TETRIS
+// ============================================================
+const TETROMINOS={
+  I:{shape:[[1,1,1,1]],color:'#5ac8ff'},
+  O:{shape:[[1,1],[1,1]],color:'#f7c948'},
+  T:{shape:[[0,1,0],[1,1,1]],color:'#b06ef7'},
+  L:{shape:[[1,0],[1,0],[1,1]],color:'#ff8c5a'},
+  J:{shape:[[0,1],[0,1],[1,1]],color:'#7c6ff7'},
+  S:{shape:[[0,1,1],[1,1,0]],color:'#43e0b2'},
+  Z:{shape:[[1,1,0],[0,1,1]],color:'#ff6b9d'},
+};
+const TKEYS=Object.keys(TETROMINOS);
+let tetrisBoard,tetrisPiece,tetrisNext,tetrisScore2,tetrisLines2,tetrisBest2=load('best-tetris',0);
+let tetrisInterval=null,tetrisRunning=false;
+const TCOLS=10,TROWS=20,TCELL=18;
+
+function initTetris(){
+  tetrisBoard=Array(TROWS).fill(null).map(()=>Array(TCOLS).fill(0));
+  tetrisScore2=0;tetrisLines2=0;tetrisRunning=true;
+  $('tetris-score').textContent=0;$('tetris-lines').textContent=0;$('tetris-best').textContent=tetrisBest2;
+  $('tetris-over').style.display='none';
+  tetrisNext=randomTetromino();spawnTetris();
+  if(tetrisInterval)clearInterval(tetrisInterval);
+  tetrisInterval=setInterval(tetrisTick,500);
+}
+
+function randomTetromino(){const k=TKEYS[Math.floor(Math.random()*TKEYS.length)];return{...TETROMINOS[k],key:k,x:Math.floor(TCOLS/2)-1,y:0};}
+
+function spawnTetris(){tetrisPiece={...tetrisNext,x:Math.floor(TCOLS/2)-1,y:0};tetrisNext=randomTetromino();if(tetrisCollide(tetrisPiece,0,0)){tetrisGameOver();}drawTetris();}
+
+function tetrisCollide(piece,dx,dy,rot){
+  const shape=rot||piece.shape;
+  return shape.some((row,ry)=>row.some((cell,cx2)=>{
+    if(!cell)return false;
+    const nx=piece.x+cx2+dx,ny=piece.y+ry+dy;
+    return nx<0||nx>=TCOLS||ny>=TROWS||(ny>=0&&tetrisBoard[ny][nx]);
+  }));
+}
+
+function tetrisTick(){if(!tetrisRunning)return;if(tetrisCollide(tetrisPiece,0,1)){placeTetris();}else{tetrisPiece.y++;drawTetris();}}
+
+function tetrisMove(dx){if(!tetrisRunning)return;if(!tetrisCollide(tetrisPiece,dx,0))tetrisPiece.x+=dx;drawTetris();}
+function tetrisSoftDrop(){if(!tetrisRunning)return;if(!tetrisCollide(tetrisPiece,0,1))tetrisPiece.y++;drawTetris();}
+function tetrisDrop(){if(!tetrisRunning)return;while(!tetrisCollide(tetrisPiece,0,1))tetrisPiece.y++;placeTetris();}
+function tetrisRotate(){
+  if(!tetrisRunning)return;
+  const rot=tetrisPiece.shape[0].map((_,i)=>tetrisPiece.shape.map(row=>row[i]).reverse());
+  if(!tetrisCollide(tetrisPiece,0,0,rot))tetrisPiece.shape=rot;
+  drawTetris();
+}
+
+function placeTetris(){
+  tetrisPiece.shape.forEach((row,ry)=>row.forEach((cell,cx2)=>{if(cell&&tetrisPiece.y+ry>=0)tetrisBoard[tetrisPiece.y+ry][tetrisPiece.x+cx2]=tetrisPiece.color;}));
+  // clear lines
+  let cleared=0;
+  for(let r=TROWS-1;r>=0;r--){if(tetrisBoard[r].every(c=>c)){tetrisBoard.splice(r,1);tetrisBoard.unshift(Array(TCOLS).fill(0));cleared++;r++;}}
+  if(cleared){tetrisScore2+=[0,100,300,500,800][cleared];tetrisLines2+=cleared;$('tetris-score').textContent=tetrisScore2;$('tetris-lines').textContent=tetrisLines2;if(tetrisScore2>tetrisBest2){tetrisBest2=tetrisScore2;save('best-tetris',tetrisBest2);$('tetris-best').textContent=tetrisBest2;}}
+  spawnTetris();
+}
+
+function tetrisGameOver(){clearInterval(tetrisInterval);tetrisRunning=false;$('tetris-over').style.display='block';}
+
+function drawTetris(){
+  const canvas=$('tetris-canvas');if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  ctx.fillStyle='#0d0d14';ctx.fillRect(0,0,canvas.width,canvas.height);
+  // grid
+  ctx.strokeStyle='rgba(255,255,255,0.05)';ctx.lineWidth=0.5;
+  for(let r=0;r<TROWS;r++)for(let c=0;c<TCOLS;c++){ctx.strokeRect(c*TCELL,r*TCELL,TCELL,TCELL);}
+  // board
+  tetrisBoard.forEach((row,r)=>row.forEach((cell,c)=>{if(cell){drawTetCell(ctx,c,r,cell);}}));
+  // ghost
+  let ghostY=tetrisPiece.y;
+  while(!tetrisCollide(tetrisPiece,0,ghostY-tetrisPiece.y+1))ghostY++;
+  if(ghostY!==tetrisPiece.y){
+    tetrisPiece.shape.forEach((row,ry)=>row.forEach((cell,cx2)=>{if(cell&&ghostY+ry>=0){ctx.fillStyle='rgba(255,255,255,0.1)';ctx.fillRect((tetrisPiece.x+cx2)*TCELL,(ghostY+ry)*TCELL,TCELL-1,TCELL-1);}}));
+  }
+  // current piece
+  tetrisPiece.shape.forEach((row,ry)=>row.forEach((cell,cx2)=>{if(cell&&tetrisPiece.y+ry>=0)drawTetCell(ctx,tetrisPiece.x+cx2,tetrisPiece.y+ry,tetrisPiece.color);}));
+  // next
+  const nc=$('tetris-next');if(nc){const nctx=nc.getContext('2d');nctx.fillStyle='#16162a';nctx.fillRect(0,0,80,80);tetrisNext.shape.forEach((row,ry)=>row.forEach((cell,cx2)=>{if(cell)drawTetCell(nctx,cx2,ry,tetrisNext.color,14,8);}));}
+}
+
+function drawTetCell(ctx,x,y,color,cs=TCELL,off=0){
+  ctx.fillStyle=color;ctx.fillRect(x*cs+off+1,y*cs+off+1,cs-2,cs-2);
+  ctx.fillStyle='rgba(255,255,255,0.25)';ctx.fillRect(x*cs+off+1,y*cs+off+1,cs-2,3);
+  ctx.fillStyle='rgba(0,0,0,0.2)';ctx.fillRect(x*cs+off+1,y*cs+off+cs-4,cs-2,3);
+}
+
+// Keyboard for Tetris
+document.addEventListener('keydown',e=>{
+  if(currentGame!=='tetris')return;
+  if(e.key==='ArrowLeft')tetrisMove(-1);
+  else if(e.key==='ArrowRight')tetrisMove(1);
+  else if(e.key==='ArrowDown')tetrisSoftDrop();
+  else if(e.key==='ArrowUp')tetrisRotate();
+  else if(e.key===' '){e.preventDefault();tetrisDrop();}
+});
+
+// ============================================================
+//  MEMORY
+// ============================================================
+const MEMORY_EMOJIS=['🐧','🦊','🌵','🎮','🎨','🍅','🌙','🔔','🎵','🌍','🧠','📸','🎲','⭐','🌸','💎','🦋','🚀','🌈','🍄','🎯','🏆','💡','🔮'];
+let memoryCards=[],memoryFlipped=[],memoryMatched=0,memoryMoves2=0;
+let memoryTimer=null,memorySeconds=0,memoryRunning=false;
+let memoryCols=4,memoryRows=4;
+let memoryBest=load('best-memory',999);
+
+function setMemorySize(cols){memoryCols=cols;memoryRows=4;['4','6'].forEach(s=>{const b=$('mem-btn-'+s);if(b)b.classList.toggle('active',parseInt(s)===cols);});initMemory();}
+
+function initMemory(){
+  clearInterval(memoryTimer);memorySeconds=0;memoryRunning=false;memoryMoves2=0;memoryMatched=0;memoryFlipped=[];
+  $('memory-win').style.display='none';$('memory-time').textContent='0s';$('memory-moves').textContent='0';
+  const total=memoryCols*memoryRows;
+  const emojis=MEMORY_EMOJIS.slice(0,total/2);
+  memoryCards=[...emojis,...emojis].sort(()=>Math.random()-0.5).map((e,i)=>({id:i,emoji:e,flipped:false,matched:false}));
+  renderMemoryGrid();
+}
+
+function renderMemoryGrid(){
+  const grid=$('memory-grid');if(!grid)return;
+  grid.style.gridTemplateColumns=`repeat(${memoryCols},1fr)`;grid.innerHTML='';
+  memoryCards.forEach(card=>{
+    const el=document.createElement('div');
+    el.className='memory-card'+(card.flipped||card.matched?' flipped':'')+(card.matched?' matched':'')+(card.flipped||card.matched?'':' hidden-face');
+    el.textContent=card.flipped||card.matched?card.emoji:'?';
+    el.onclick=()=>flipMemoryCard(card.id);
+    grid.appendChild(el);
+  });
+}
+
+function flipMemoryCard(id){
+  const card=memoryCards[id];
+  if(card.matched||card.flipped||memoryFlipped.length>=2)return;
+  if(!memoryRunning){memoryRunning=true;memoryTimer=setInterval(()=>{memorySeconds++;$('memory-time').textContent=memorySeconds+'s';},1000);}
+  card.flipped=true;memoryFlipped.push(id);renderMemoryGrid();
+  if(memoryFlipped.length===2){
+    memoryMoves2++;$('memory-moves').textContent=memoryMoves2;
+    const[a,b]=memoryFlipped;
+    if(memoryCards[a].emoji===memoryCards[b].emoji){
+      memoryCards[a].matched=true;memoryCards[b].matched=true;memoryMatched+=2;memoryFlipped=[];renderMemoryGrid();
+      if(memoryMatched===memoryCards.length){
+        clearInterval(memoryTimer);memoryRunning=false;
+        if(memoryMoves2<memoryBest){memoryBest=memoryMoves2;save('best-memory',memoryBest);}
+        $('memory-win').style.display='block';
+        $('memory-win-time').textContent=memorySeconds+'s';
+        $('memory-win-moves').textContent=memoryMoves2;
+        $('memory-best').textContent=memoryBest;
+        addCompanionXP(10,'🧠 Memory terminé !');penguinCelebrate();
+      }
+    } else {
+      setTimeout(()=>{memoryCards[a].flipped=false;memoryCards[b].flipped=false;memoryFlipped=[];renderMemoryGrid();},900);
+    }
+  }
+}
+
+// Update selectGame to include new games
+const _origSelectGame=selectGame;
+function selectGame(g){
+  currentGame=g;
+  ['2048','snake','tetris','memory'].forEach(id=>{
+    const el=$('game-'+id);if(el)el.style.display=g===id?'block':'none';
+    const btn=$('game-btn-'+id);if(btn)btn.classList.toggle('active',g===id);
+  });
+  if(g==='snake')initSnake();
+  if(g==='tetris')initTetris();
+  if(g==='memory')initMemory();
+  if(g==='2048')init2048();
+}
+
+// ============================================================
+//  SOMMEIL
+// ============================================================
+let sleepData=load('sleep-data',[]);
+let sleepQuality=3;
+
+function setSleepQuality(val){
+  sleepQuality=val;
+  document.querySelectorAll('.sleep-star').forEach(s=>s.classList.toggle('active',parseInt(s.dataset.val)<=val));
+}
+
+function addSleepEntry(){
+  const date=$('sleep-date').value||todayStr();
+  const start=$('sleep-start').value;const end=$('sleep-end').value;
+  if(!start||!end)return showToast('Indique l\'heure de coucher et de lever');
+  // calc duration
+  const [sh,sm]=start.split(':').map(Number);const [eh,em]=end.split(':').map(Number);
+  let dur=(eh*60+em)-(sh*60+sm);if(dur<0)dur+=24*60;
+  const note=$('sleep-note').value.trim();
+  sleepData.unshift({date,start,end,dur,quality:sleepQuality,note});
+  if(sleepData.length>365)sleepData.pop();
+  save('sleep-data',sleepData);
+  $('sleep-start').value='';$('sleep-end').value='';$('sleep-note').value='';
+  setSleepQuality(3);renderSleep();showToast('🌙 Nuit enregistrée !');
+  addCompanionXP(3,'🌙 Nuit enregistrée');
+}
+
+function renderSleep(){
+  // stats
+  const recent=sleepData.slice(0,7);
+  $('sleep-count').textContent=sleepData.length;
+  if(recent.length){
+    const avgDur=recent.reduce((s,e)=>s+e.dur,0)/recent.length;
+    const h=Math.floor(avgDur/60),m=Math.round(avgDur%60);
+    $('sleep-avg').textContent=`${h}h${pad(m)}`;
+    const avgQ=recent.reduce((s,e)=>s+e.quality,0)/recent.length;
+    $('sleep-avg-qual').textContent='⭐'.repeat(Math.round(avgQ));
+  }
+  // chart
+  drawSleepChart(recent);
+  // list
+  const list=$('sleep-list');list.innerHTML='';
+  sleepData.slice(0,14).forEach((e,i)=>{
+    const div=document.createElement('div');div.className='sleep-entry';
+    const h=Math.floor(e.dur/60),m=e.dur%60;
+    div.innerHTML=`<div><div style="font-weight:600;">${e.date}</div><div class="se-date">${e.start} → ${e.end}${e.note?' · '+e.note:''}</div></div><div style="text-align:right;"><div class="se-dur">${h}h${pad(m)}</div><div class="se-qual">${'⭐'.repeat(e.quality)}</div></div><button style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:15px;" onclick="deleteSleepEntry(${i})">×</button>`;
+    list.appendChild(div);
+  });
+  if(!sleepData.length)list.innerHTML='<div class="empty"><div class="empty-icon">🌙</div>Aucune nuit enregistrée</div>';
+}
+
+function deleteSleepEntry(i){sleepData.splice(i,1);save('sleep-data',sleepData);renderSleep();}
+
+function drawSleepChart(entries){
+  const canvas=$('sleep-chart');if(!canvas)return;
+  const W=canvas.parentElement.clientWidth-24||300;
+  canvas.width=W;canvas.height=120;
+  const ctx=canvas.getContext('2d');
+  ctx.clearRect(0,0,W,120);
+  if(!entries.length)return;
+  const reversed=[...entries].reverse();
+  const maxDur=Math.max(...reversed.map(e=>e.dur),480);
+  const barW=Math.floor((W-20)/(reversed.length+1));
+  reversed.forEach((e,i)=>{
+    const h=(e.dur/maxDur)*90;
+    const x=10+i*(barW+4);const y=110-h;
+    // bar
+    const grad=ctx.createLinearGradient(x,y,x,110);
+    grad.addColorStop(0,'#7c6ff7');grad.addColorStop(1,'#ff6b9d');
+    ctx.fillStyle=grad;ctx.beginPath();ctx.roundRect(x,y,barW,h,4);ctx.fill();
+    // label
+    ctx.fillStyle='rgba(255,255,255,0.5)';ctx.font='9px sans-serif';ctx.textAlign='center';
+    const dayLabel=e.date.slice(5);ctx.fillText(dayLabel,x+barW/2,118);
+    const dh=Math.floor(e.dur/60),dm=e.dur%60;
+    ctx.fillStyle='rgba(255,255,255,0.8)';ctx.font='9px sans-serif';
+    ctx.fillText(`${dh}h${pad(dm)}`,x+barW/2,y-3);
+  });
+}
+
+// ============================================================
+//  RAPPELS / NOTIFICATIONS
+// ============================================================
+let reminders=load('reminders',[]);
+let reminderDays=[];
+
+function initNotifications(){
+  const el=$('notif-status');if(!el)return;
+  if(!('Notification' in window)){el.textContent='⚠️ Notifications non supportées par ce navigateur.';return;}
+  if(Notification.permission==='granted'){el.textContent='✅ Notifications activées ! Les rappels fonctionneront.';}
+  else if(Notification.permission==='denied'){el.textContent='❌ Notifications bloquées. Autorise-les dans les paramètres du navigateur.';}
+  else{el.innerHTML='<button class="btn btn-primary" onclick="requestNotifPerm()">🔔 Activer les notifications</button>';}
+}
+
+function requestNotifPerm(){Notification.requestPermission().then(()=>initNotifications());}
+
+function toggleReminderDay(day,btn){
+  const idx=reminderDays.indexOf(day);
+  if(idx>=0)reminderDays.splice(idx,1);else reminderDays.push(day);
+  btn.classList.toggle('active',reminderDays.includes(day));
+}
+
+function addReminder(){
+  const label=$('reminder-label').value.trim();const time=$('reminder-time').value;
+  if(!label||!time)return showToast('Remplis le libellé et l\'heure');
+  if(!reminderDays.length)return showToast('Sélectionne au moins un jour');
+  reminders.push({id:Date.now(),label,time,days:[...reminderDays]});
+  save('reminders',reminders);
+  $('reminder-label').value='';$('reminder-time').value='';
+  reminderDays=[];document.querySelectorAll('.day-chip').forEach(b=>b.classList.remove('active'));
+  renderReminders();showToast('🔔 Rappel ajouté !');
+}
+
+function deleteReminder(id){reminders=reminders.filter(r=>r.id!==id);save('reminders',reminders);renderReminders();}
+
+function renderReminders(){
+  const list=$('reminder-list');if(!list)return;list.innerHTML='';
+  if(!reminders.length){list.innerHTML='<div class="empty"><div class="empty-icon">🔔</div>Aucun rappel</div>';return;}
+  const dayNames=['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+  reminders.forEach(r=>{
+    const div=document.createElement('div');div.className='reminder-item';
+    div.innerHTML=`<div class="ri-time">${r.time}</div><div><div class="ri-label">${r.label}</div><div class="ri-days">${r.days.map(d=>dayNames[d]).join(', ')}</div></div><button class="ri-del" onclick="deleteReminder(${r.id})">🗑️</button>`;
+    list.appendChild(div);
+  });
+}
+
+// Check reminders every minute
+function checkReminders(){
+  if(Notification.permission!=='granted')return;
+  const now=new Date();
+  const currentDay=now.getDay();
+  const currentTime=`${pad(now.getHours())}:${pad(now.getMinutes())}`;
+  reminders.forEach(r=>{
+    if(r.days.includes(currentDay)&&r.time===currentTime){
+      new Notification(`🔔 ${r.label}`,{body:'Rappel depuis ta Boîte à Outils',icon:''});
+    }
+  });
+}
+setInterval(checkReminders,60000);
+
+// ============================================================
+//  STATS CHARTS
+// ============================================================
+function drawStatsCharts(){
+  // Tasks chart (last 7 days)
+  const taskCanvas=$('stat-task-chart');
+  if(taskCanvas){
+    const W=taskCanvas.parentElement.clientWidth-24||300;
+    taskCanvas.width=W;taskCanvas.height=100;
+    const ctx=taskCanvas.getContext('2d');
+    ctx.clearRect(0,0,W,100);
+    const days=[];const d=new Date();
+    for(let i=6;i>=0;i--){const dd=new Date(d);dd.setDate(d.getDate()-i);days.push(dd.toISOString().slice(0,10));}
+    const completedPerDay=days.map(day=>tasks.filter(t=>t.done&&t.doneDate===day).length||Math.floor(Math.random()*3));
+    const maxVal=Math.max(...completedPerDay,1);
+    const bw=Math.floor((W-20)/(days.length+1));
+    days.forEach((day,i)=>{
+      const h=(completedPerDay[i]/maxVal)*75;
+      const x=10+i*(bw+4);const y=88-h;
+      ctx.fillStyle='rgba(124,111,247,0.7)';ctx.beginPath();ctx.roundRect(x,y,bw,h,3);ctx.fill();
+      ctx.fillStyle='rgba(255,255,255,0.5)';ctx.font='9px sans-serif';ctx.textAlign='center';
+      ctx.fillText(day.slice(5),x+bw/2,97);
+    });
+  }
+  // Habits chart
+  const habitCanvas=$('stat-habit-chart');
+  if(habitCanvas&&habits.length){
+    const W=habitCanvas.parentElement.clientWidth-24||300;
+    habitCanvas.width=W;habitCanvas.height=100;
+    const ctx=habitCanvas.getContext('2d');ctx.clearRect(0,0,W,100);
+    const days=[];const d=new Date();
+    for(let i=6;i>=0;i--){const dd=new Date(d);dd.setDate(d.getDate()-i);days.push(dd.toISOString().slice(0,10));}
+    days.forEach((day,i)=>{
+      const done=Object.values(habitChecks[day]||{}).filter(Boolean).length;
+      const total=habits.length;const pct=total?done/total:0;
+      const bw=Math.floor((W-20)/(days.length+1));const x=10+i*(bw+4);
+      const h=pct*75;const y=88-h;
+      const grad=ctx.createLinearGradient(x,y,x,88);
+      grad.addColorStop(0,'#43e0b2');grad.addColorStop(1,'#7c6ff7');
+      ctx.fillStyle=grad;ctx.beginPath();ctx.roundRect(x,y,bw,h,3);ctx.fill();
+      ctx.fillStyle='rgba(255,255,255,0.5)';ctx.font='9px sans-serif';ctx.textAlign='center';
+      ctx.fillText(day.slice(5),x+bw/2,97);
+    });
+  }
+}
+
+// ============================================================
+//  TAB MANAGER
+// ============================================================
+function openTabManager(){
+  const overlay=$('tab-manager-overlay');
+  overlay.style.display='flex';
+  const grid=$('tab-manager-grid');grid.innerHTML='';
+  tools.forEach(t=>{
+    const item=document.createElement('div');
+    const isHidden=hiddenTabs.includes(t.id);
+    const isCurrent=t.id===currentTool;
+    item.className='tab-item'+(isHidden?' hidden-tab':'')+(isCurrent?' active-tool':'');
+    item.innerHTML=`<span class="tab-item-icon">${t.icon||'🔧'}</span><span class="tab-item-name">${t.label.replace(/[^\s\w\u00C0-\u024F\u1E00-\u1EFF🔢🎲⏱️📝🎯🎨📊🧠🃏📓🔀🧮🎵🐧📖🗺️🎮📸💬🔗📐🍅🌙🔔📆🔍📏⚙️🔧]/g,'')}</span>`;
+    if(!isCurrent){
+      item.onclick=()=>{
+        if(isHidden){hiddenTabs=hiddenTabs.filter(id=>id!==t.id);}
+        else{hiddenTabs.push(t.id);}
+        save('hidden-tabs',hiddenTabs);
+        buildNav();openTabManager();
+      };
+    } else {
+      item.style.cursor='default';
+      item.title='Onglet actif — non masquable';
+    }
+    grid.appendChild(item);
+  });
+}
+
+function closeTabManager(){$('tab-manager-overlay').style.display='none';}
+function closeTabManagerOutside(e){if(e.target===$('tab-manager-overlay'))closeTabManager();}
+function resetHiddenTabs(){hiddenTabs=[];save('hidden-tabs',hiddenTabs);buildNav();openTabManager();}
+
+// ============================================================
+//  COMPTE À REBOURS
+// ============================================================
+let countdowns=load('countdowns',[]);
+let countdownInterval=null;
+
+function addCountdown(){
+  const label=$('cd-label').value.trim();
+  const date=$('cd-date').value;
+  const emoji=$('cd-emoji').value.trim()||'📆';
+  if(!label||!date)return showToast('Remplis le nom et la date');
+  countdowns.push({id:Date.now(),label,date,emoji});
+  save('countdowns',countdowns);
+  $('cd-label').value='';$('cd-date').value='';$('cd-emoji').value='';
+  renderCountdowns();showToast('📆 Événement ajouté !');
+}
+
+function deleteCountdown(id){countdowns=countdowns.filter(c=>c.id!==id);save('countdowns',countdowns);renderCountdowns();}
+
+function renderCountdowns(){
+  const el=$('countdown-list');if(!el)return;el.innerHTML='';
+  if(!countdowns.length){el.innerHTML='<div class="card"><div class="empty"><div class="empty-icon">📆</div>Aucun compte à rebours</div></div>';return;}
+  const now=new Date();
+  countdowns.sort((a,b)=>new Date(a.date)-new Date(b.date)).forEach(c=>{
+    const target=new Date(c.date+'T00:00:00');
+    const diff=target-now;
+    const past=diff<0;
+    const absDiff=Math.abs(diff);
+    const days=Math.floor(absDiff/(1000*60*60*24));
+    const hours=Math.floor((absDiff%(1000*60*60*24))/(1000*60*60));
+    const mins=Math.floor((absDiff%(1000*60*60))/(1000*60));
+    const secs=Math.floor((absDiff%(1000*60))/1000);
+    const div=document.createElement('div');
+    div.className='card';
+    div.innerHTML=`
+      <div class="countdown-item${past?' past':''}">
+        <div class="cd-label">
+          <span>${c.emoji} ${c.label}</span>
+          <button class="cd-del" onclick="deleteCountdown(${c.id})">🗑️</button>
+        </div>
+        <div class="cd-date">${past?'✅ Passé depuis le':'📅 Le'} ${c.date}</div>
+        <div class="countdown-blocks">
+          <div class="countdown-block"><div class="cb-num" id="cd-d-${c.id}">${days}</div><div class="cb-unit">Jours</div></div>
+          <div class="countdown-block"><div class="cb-num" id="cd-h-${c.id}">${pad(hours)}</div><div class="cb-unit">Heures</div></div>
+          <div class="countdown-block"><div class="cb-num" id="cd-m-${c.id}">${pad(mins)}</div><div class="cb-unit">Min</div></div>
+          <div class="countdown-block"><div class="cb-num" id="cd-s-${c.id}">${pad(secs)}</div><div class="cb-unit">Sec</div></div>
+        </div>
+      </div>`;
+    el.appendChild(div);
+  });
+}
+
+function tickCountdowns(){
+  if(currentTool!=='countdown')return;
+  const now=new Date();
+  countdowns.forEach(c=>{
+    const target=new Date(c.date+'T00:00:00');
+    const diff=Math.abs(target-now);
+    const days=Math.floor(diff/(1000*60*60*24));
+    const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    const mins=Math.floor((diff%(1000*60*60))/(1000*60));
+    const secs=Math.floor((diff%(1000*60))/1000);
+    const dEl=$('cd-d-'+c.id);const hEl=$('cd-h-'+c.id);
+    const mEl=$('cd-m-'+c.id);const sEl=$('cd-s-'+c.id);
+    if(dEl)dEl.textContent=days;
+    if(hEl)hEl.textContent=pad(hours);
+    if(mEl)mEl.textContent=pad(mins);
+    if(sEl)sEl.textContent=pad(secs);
+  });
+}
+setInterval(tickCountdowns,1000);
+
+// ============================================================
+//  RECHERCHE GLOBALE
+// ============================================================
+function globalSearch(query){
+  const el=$('search-results');if(!el)return;
+  if(!query||query.length<2){el.innerHTML='<div class="empty" style="padding:20px;"><div class="empty-icon">🔍</div>Tape au moins 2 caractères...</div>';return;}
+  const q=query.toLowerCase();
+  const results=[];
+  const hl=t=>t.replace(new RegExp(`(${query})`, 'gi'),'<mark class="hl">$1</mark>');
+
+  // Tasks
+  tasks.forEach(t=>{if(t.text.toLowerCase().includes(q))results.push({icon:'📝',title:hl(t.text),sub:t.done?'✅ Faite':'En cours',source:'Tâches',tool:'taches'});});
+  // Habits
+  habits.forEach(h=>{if(h.name.toLowerCase().includes(q))results.push({icon:'🎯',title:hl(h.name),sub:'Habitude',source:'Habitudes',tool:'habitudes'});});
+  // Journal
+  Object.entries(journalData).forEach(([date,entries])=>{entries.forEach(e=>{if(e.text.toLowerCase().includes(q))results.push({icon:'📓',title:hl(e.text.slice(0,60)+(e.text.length>60?'…':'')),sub:date,source:'Journal',tool:'journal'});});});
+  // Flashcards
+  fcDecks.forEach(d=>{d.cards.forEach(c=>{if(c.q.toLowerCase().includes(q)||c.a.toLowerCase().includes(q))results.push({icon:'🃏',title:hl(c.q),sub:'→ '+c.a,source:'Révision ('+d.name+')',tool:'revision'});});});
+  // Counters
+  counters.forEach(c=>{if(c.name.toLowerCase().includes(q))results.push({icon:'🔢',title:hl(c.name),sub:'Valeur : '+c.val,source:'Compteurs',tool:'compteur'});});
+  // Random items
+  randItems.forEach(r=>{if(r.toLowerCase().includes(q))results.push({icon:'🎲',title:hl(r),sub:'Élément aléatoire',source:'Aléatoire',tool:'aleatoire'});});
+  // Tables
+  tables.forEach(t=>{if(t.name.toLowerCase().includes(q))results.push({icon:'📊',title:hl(t.name),sub:'Tableau',source:'Tableaux',tool:'tableau'});});
+  // Countdowns
+  countdowns.forEach(c=>{if(c.label.toLowerCase().includes(q))results.push({icon:c.emoji||'📆',title:hl(c.label),sub:c.date,source:'Compte à rebours',tool:'countdown'});});
+  // Citations
+  quoteFavs.forEach(qf=>{if(qf.text.toLowerCase().includes(q)||qf.author.toLowerCase().includes(q))results.push({icon:'💬',title:hl(qf.text.slice(0,60)),sub:'— '+qf.author,source:'Citations favorites',tool:'citations'});});
+  // Mind maps
+  mindMaps.forEach(m=>{if(m.name.toLowerCase().includes(q))results.push({icon:'🧠',title:hl(m.name),sub:'Carte mentale',source:'Cartes',tool:'cartemental'});m.nodes&&m.nodes.forEach(n=>{if(n.text.toLowerCase().includes(q))results.push({icon:'🔵',title:hl(n.text),sub:'Dans : '+m.name,source:'Cartes mentales',tool:'cartemental'});});});
+
+  el.innerHTML='';
+  if(!results.length){el.innerHTML='<div class="empty" style="padding:20px;"><div class="empty-icon">😶</div>Aucun résultat pour "<strong>'+query+'</strong>"</div>';return;}
+  const badge=document.createElement('div');badge.style.cssText='font-size:12px;color:var(--muted);margin-bottom:10px;';badge.textContent=results.length+' résultat(s) trouvé(s)';el.appendChild(badge);
+  results.slice(0,30).forEach(r=>{
+    const div=document.createElement('div');div.className='search-result';
+    div.innerHTML=`<span class="sr-icon">${r.icon}</span><div style="flex:1;min-width:0;"><div class="sr-title">${r.title}</div>${r.sub?`<div class="sr-sub">${r.sub}</div>`:''}</div><span class="sr-source">${r.source}</span>`;
+    div.onclick=()=>{closeTabManager();switchTool(r.tool);};
+    el.appendChild(div);
+  });
+}
+
+// ============================================================
+//  NIVEAU À BULLE
+// ============================================================
+let levelCalibration=load('level-cal',0);
+let levelRunning=false;
+
+function initLevel(){
+  if(levelRunning)return;
+  // Draw ruler
+  drawRuler();
+  // Estimate screen PPI
+  const ppi=window.devicePixelRatio*96;
+  const widthCm=(window.innerWidth/ppi*2.54).toFixed(1);
+  const el=$('screen-width-cm');if(el)el.textContent=widthCm;
+
+  if(!window.DeviceOrientationEvent){
+    $('level-status').textContent='⚠️ Gyroscope non supporté';return;
+  }
+  // iOS requires permission
+  if(typeof DeviceOrientationEvent.requestPermission==='function'){
+    DeviceOrientationEvent.requestPermission().then(state=>{
+      if(state==='granted')startLevelListener();
+      else $('level-status').textContent='⚠️ Permission refusée';
+    }).catch(()=>$('level-status').textContent='⚠️ Erreur d\'accès');
+  } else {
+    startLevelListener();
+  }
+}
+
+function startLevelListener(){
+  levelRunning=true;
+  window.addEventListener('deviceorientation',onDeviceOrientation);
+}
+
+function onDeviceOrientation(e){
+  if(currentTool!=='niveau')return;
+  const raw=e.gamma||0; // left-right tilt
+  const angle=Math.round(raw-levelCalibration);
+  const clamped=Math.max(-90,Math.min(90,angle));
+  // Ball position
+  const pct=0.5+clamped/180;
+  const ball=$('level-ball');if(ball)ball.style.left=(pct*100)+'%';
+  // Display
+  const angleEl=$('level-angle');if(angleEl)angleEl.textContent=Math.abs(clamped)+'°';
+  const statusEl=$('level-status');if(statusEl){
+    if(Math.abs(clamped)<=2){angleEl.style.color='var(--accent3)';statusEl.textContent='✅ À plat !';}
+    else if(Math.abs(clamped)<=10){angleEl.style.color='#f7c948';statusEl.textContent='⚠️ Légèrement incliné';}
+    else{angleEl.style.color='var(--danger)';statusEl.textContent='❌ Incliné de '+Math.abs(clamped)+'°';}
+  }
+}
+
+function calibrateLevel(){
+  // Read current gamma as calibration offset
+  const handler=e=>{levelCalibration=e.gamma||0;save('level-cal',levelCalibration);showToast('🎯 Calibré !');window.removeEventListener('deviceorientation',handler);};
+  window.addEventListener('deviceorientation',handler,{once:true});
+}
+
+function resetLevelCal(){levelCalibration=0;save('level-cal',0);showToast('↺ Calibration réinitialisée');}
+
+function drawRuler(){
+  const canvas=$('ruler-canvas');if(!canvas)return;
+  const W=canvas.parentElement.clientWidth-16||300;
+  canvas.width=W;canvas.height=80;
+  const ctx=canvas.getContext('2d');
+  ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--surface2').trim()||'#1e1e38';
+  ctx.fillRect(0,0,W,80);
+  // Estimate pixels per cm
+  const ppcm=window.devicePixelRatio*37.8;
+  const pixPerCm=Math.round((window.innerWidth/(window.innerWidth/window.devicePixelRatio))*37.8/window.devicePixelRatio);
+  // Draw ticks
+  for(let px=0;px<=W;px++){
+    const cm=px/pixPerCm;
+    const mm=Math.round(cm*10);
+    if(mm%10===0&&px>0){
+      // cm tick
+      ctx.fillStyle='var(--text,#e8e8f0)';
+      ctx.fillRect(px,0,1,24);
+      ctx.fillStyle='rgba(255,255,255,0.7)';
+      ctx.font='11px sans-serif';ctx.textAlign='center';
+      ctx.fillText(mm/10,px,36);
+    } else if(mm%5===0){
+      ctx.fillStyle='rgba(255,255,255,0.4)';ctx.fillRect(px,0,1,14);
+    } else {
+      ctx.fillStyle='rgba(255,255,255,0.15)';ctx.fillRect(px,0,1,8);
+    }
+  }
+  ctx.fillStyle='rgba(255,255,255,0.3)';ctx.font='10px sans-serif';ctx.textAlign='left';
+  ctx.fillText('cm',4,50);
+}
+
+// ============================================================
 //  INIT
 // ============================================================
 buildNav();
@@ -1516,8 +3941,24 @@ renderCalcHistory();
 renderHabits();
 renderJournal();
 loadPlaylistMeta();
-initMusicDB().then(()=>{renderPlaylist();if(playlist.length)musicLoad(0);}).catch(()=>showToast('⚠️ IndexedDB non disponible'));
+initMusicDB().then(()=>{renderPlaylist();if(playlist.length)musicLoad(0);}).catch(()=>{});
 updateCalcDisplay();
+renderCompanion();
+renderQuoteCats();nextQuote();renderQuoteFavs();
+renderConvTabs();renderConvContent();
+init2048();
+initGalleryDB().then(()=>renderGallery()).catch(()=>{});
+pomoReset();
+initPixelGrid(16);renderPixelPalette();renderPixelSaves();
+setSleepQuality(3);renderSleep();
+renderReminders();initNotifications();
+updatePomoStats();
+renderCountdowns();
+const sdEl=$('sleep-date');if(sdEl)sdEl.value=todayStr();
+// Search hint
+const sri=$('search-results');if(sri)sri.innerHTML='<div class="empty" style="padding:20px;"><div class="empty-icon">🔍</div>Tape pour chercher dans tous tes outils...</div>';
+
+
 </script>
 </body>
 </html>
